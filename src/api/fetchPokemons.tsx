@@ -11,7 +11,6 @@ export async function fetchPokemons() {
         throw new Error("Failed to fetch pokemons")
     }
     const results = await response.json();
-    console.log(results);
 
     const pokemons = results.results.map((pokemon: any) => ({
         name: pokemon.name,

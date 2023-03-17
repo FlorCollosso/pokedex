@@ -1,11 +1,10 @@
 import { PokemonDetails } from "../types/types";
-import { formatName } from "../utils/Utils";
 
 export async function fetchPokemon(
-  pokemonName: string
+  pokemonId: string
 ): Promise<PokemonDetails> {
   const response = await fetch(
-    `https://pokeapi.co/api/v2/pokemon/${formatName(pokemonName)}`
+    `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
   );
 
   if (!response.ok) {
@@ -16,10 +15,14 @@ export async function fetchPokemon(
   const pokemon = {
     name: result.name,
     id: result.id,
-    imgSrc: `https://img.pokemondb.net/sprites/black-white/anim/normal/${formatName(result.name.toLowerCase())}.gif`,
+    imgSrc: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${parseInt(result.id?? '', 10).toString()}.png`,
     hp: result.stats[0]?.base_stat,
     attack: result.stats[1]?.base_stat,
     defense: result.stats[2]?.base_stat,
+    speed: result.stats[5]?.base_stat,
+    height: result.height,
+    weight: result.weight,
+    types: result.types[1] ? `${result.types[0]?.type.name} & ${result.types[1]?.type.name}` : result.types[0]?.type.name
   };
   return pokemon;
 }

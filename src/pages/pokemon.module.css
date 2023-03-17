@@ -1,38 +1,99 @@
 .pokemon {
-    height: 85vh;
-  }
+  margin: 0;
+  height: 100%;
+}
+
+.containerInfo {
+  width: 60vh;
+  margin: auto;
+  padding: 5vh 5vh;
+  background: white;
+  border-radius: 2vw;
+  position: relative;
+  bottom: 7vw;
+}
   
-  .pokeballButton {
-    border: none;
-    cursor: pointer;
-    outline: none;
-    display: flex;
-    align-items: center;
-    background: none;
-    padding: 50px 50px 0 50px;
-  }
-  
-  .pokeballImg {
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
-  }
-  
-  .pokemonInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px 0;
-  }
-  
-  .pokemonInfoImg {
-    width: 100px;
-    margin: 20px 0;
-  }
-  
-  .pokemonTitle {
-    margin: 50px 0;
-    font-size: 2em;
-    font-weight: bold;
-  }
+.pokeballButton {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  background: none;
+  padding: 50px 50px 0 50px;
+  color: white;
+}
+
+.pokeballImg {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.pokemonInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.pokemonInfoImg {
+  width: 18vw;
+  position: relative;
+  z-index: 2;
+}
+
+.pokeNumber {
+  margin: 5vw 0 20px 0;
+}
+
+.containerImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemonTitle {
+  margin: 10px 0 20px 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.containerStats {
+  margin: 1vh 0;
+  align-content: space-between;
+}
+
+.containerStats div {
+  margin-top: 15px;
+}
+
+.statHp::before {
+  content: '';
+  display: block;
+  background: green;
+  height: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.statAttack::before {
+  content: '';
+  display: block;
+  background: red;
+  height: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.statDefense::before {
+  content: '';
+  display: block;
+  background: lightblue;
+  height: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
   

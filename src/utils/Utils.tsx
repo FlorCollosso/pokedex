@@ -15,3 +15,33 @@ export function formatName(name: string): string {
       return name;
     }
 }
+
+export function formatTitle(name: string): string {
+if (name.includes("-f")) {
+  return name.replace("-f", "♀")
+}else if (name.includes("n-m")) {
+  return name.replace("-m", "♂")
+}else if (name.includes("r-")) {
+  return name.replace("-", ". ")
+}else if (name.includes("fetchd")) {
+  return name.replace("fetchd", "fetch'd");
+} 
+return name;
+}
+
+export function formatText(flavor_text: any): string {
+  
+  const formattedText = flavor_text
+    .replace(/\f/g, '\n')
+    .replace(/\u00ad\n/g, '')
+    .replace(/\u00ad/g, '')
+    .replace(/ -\n/g, ' - ')
+    .replace(/-\n/g, '-')
+    .replace(/\n/g, ' ');
+  
+    if (formattedText.includes("POKéMON")) {
+      return formattedText.replace("POKéMON", "pokémon");
+    }
+
+  return formattedText;
+}

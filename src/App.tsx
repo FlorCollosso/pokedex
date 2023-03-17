@@ -7,7 +7,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/pokemons/:name" element={<Pokemon/>}/>
+          <Route path="/pokemons/:id" element={<Pokemon/>}/>
           <Route path="/pokemons" element={<Pokemons/>}/>
           <Route path="/items" element={<Items/>}/>
           <Route path="/" element={<Pokemons/>}/>
