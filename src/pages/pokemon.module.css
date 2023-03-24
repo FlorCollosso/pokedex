@@ -1,18 +1,8 @@
-.pokemon {
-  margin: 0;
+.section {
   height: 100%;
+  overflow: hidden;
 }
 
-.containerInfo {
-  width: 60vh;
-  margin: auto;
-  padding: 5vh 5vh;
-  background: white;
-  border-radius: 2vw;
-  position: relative;
-  bottom: 7vw;
-}
-  
 .pokeballButton {
   border: none;
   cursor: pointer;
@@ -22,6 +12,8 @@
   background: none;
   padding: 50px 50px 0 50px;
   color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .pokeballImg {
@@ -30,22 +22,128 @@
   margin-right: 5px;
 }
 
-.pokemonInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 2;
+.pokemon {
+  margin: 3vw ;
+  height: 100%;
+  color: white;
 }
 
-.pokemonInfoImg {
-  width: 18vw;
+.containerInfo {
+  width: 100%;
+  max-height: 35vw;
+  padding: 0 1vw;
+}
+
+.containerDivInfo {
   position: relative;
-  z-index: 2;
+  bottom: 6vw;
+}
+
+.pokemonInfo {
+  display: flex;
+  flex-direction: row;
 }
 
 .pokeNumber {
-  margin: 5vw 0 20px 0;
+  margin: 0  0 10px 0;
+  font-family: 'Archivo Black', sans-serif;
+  letter-spacing: -.6vw;
+  font-size: 17vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, .1);
+}
+
+.pokemonTitle {
+  font-size: 7vw;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -.1vw;
+  font-weight: 700;
+  position: relative;
+  bottom: 12vw;
+  text-shadow: 2px 2px 50px #52525244;
+}
+
+.containerStats {
+  align-content: space-between;
+  margin-right: 7vw;
+  position: relative;
+  bottom: 11vw;
+  width: 65%;
+}
+
+.divStatBar {
+  margin-top: .5vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  --animate-duration: .3s;
+}
+
+.stat {
+  font-size: 1.1vw;
+  font-weight: 200;
+  margin-top: .5vw;
+}
+
+progress[value] {
+  margin-top: .2vw;
+  width: 100%;
+  height: 1.2vw;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 10px;
+  background: #acacac;
+  border: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background: #acacac;
+  border-radius: 10px;
+}
+
+progress[value]::-moz-progress-bar {
+  background: white;
+  border-radius: 10px;
+}
+
+progress[value]::-webkit-progress-value {
+  background: white;
+  border-radius: 10px;
+}
+
+.divStats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+  margin-top: 3vw;
+  font-size: 1.3vw;
+}
+
+.divStat {
+  display: flex;
+  flex-direction: column;
+}
+
+.divStats > :first-child,.divStats > :nth-child(2) {
+  border-right: 1px solid white;
+}
+
+.divStats > :first-child {
+  width: 70%;
+}
+
+.divStats > :nth-child(2) {
+  width: 100%;
+}
+
+.divStats > :nth-child(3) {
+  width: 70%;
+}
+
+.spanStat {
+  margin-top: 1vw; 
 }
 
 .containerImg {
@@ -55,45 +153,125 @@
   justify-content: center;
 }
 
-.pokemonTitle {
-  margin: 10px 0 20px 0;
-  font-size: 2em;
-  font-weight: bold;
+.pokemonInfoImg {
+  width: 40vw;
+  position: relative;
+  bottom: 3vw;
 }
 
-.containerStats {
-  margin: 1vh 0;
-  align-content: space-between;
+.spanTS {
+  height: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.containerStats div {
-  margin-top: 15px;
+.spanTS img {
+  width: 2vw;
+  margin: 0 .5vw;
 }
 
-.statHp::before {
-  content: '';
-  display: block;
-  background: green;
-  height: 10px;
-  border-radius: 10px;
-  width: 100%;
+.statsInfo {
+  display: flex;
 }
 
-.statAttack::before {
-  content: '';
-  display: block;
-  background: red;
-  height: 10px;
-  border-radius: 10px;
-  width: 100%;
+.divText {
+  width: fit-content;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  position: relative;
+  bottom: 7vw;
+  color: black;
 }
 
-.statDefense::before {
-  content: '';
-  display: block;
-  background: lightblue;
-  height: 10px;
-  border-radius: 10px;
-  width: 100%;
+.divText img {
+  width: 140%;
+  position: absolute;
+  z-index: 1;
 }
-  
+
+.spanText {
+  position: relative;
+  margin: 1vw .5vw 0 .5vw;
+  width: 12vw;
+  line-height: 1.5vw;
+  z-index: 2;
+}
+
+/* Color by Type */
+
+.grass {
+  background: rgb(158,199,76);
+  background: linear-gradient(347deg, rgba(158,199,76,1) 0%, rgba(82,126,57,1) 100%);
+}
+.fire {
+  background: rgb(238,129,48);
+  background: linear-gradient(347deg, rgba(238,129,48,1) 0%, rgba(181,53,9,1) 100%);
+}
+.water {
+  background: rgb(99,144,240);
+  background: linear-gradient(347deg, rgb(107, 172, 222) 0%, rgb(53, 68, 176) 100%);
+}
+.normal {
+  background: rgb(168,167,122);
+  background: linear-gradient(347deg, rgb(168, 156, 122) 0%, rgb(126, 86, 54) 100%);
+}
+.electric {
+  background: rgb(247,208,44);
+  background: linear-gradient(347deg, rgba(247,208,44,1) 0%, rgba(251,147,32,1) 100%);
+}
+.ice {
+  background: rgb(150,217,214);
+  background: linear-gradient(347deg, rgba(150,217,214,1) 0%, rgba(67,129,177,1) 100%);
+}
+.fighting {
+  background: rgb(176,66,61);
+  background: linear-gradient(347deg, rgba(176,66,61,1) 0%, rgba(140,59,95,1) 100%);
+}
+.poison {
+  background: rgb(163,62,161);
+  background: linear-gradient(347deg, rgba(163,62,161,1) 0%, rgba(112,43,167,1) 100%);
+}
+.ground {
+  background: rgb(222,189,121);
+  background: linear-gradient(347deg, rgba(222,189,121,1) 0%, rgba(210,98,19,1) 100%);
+}
+.flying {
+  background: rgb(169,143,243);
+  background: linear-gradient(347deg, rgba(169,143,243,1) 0%, rgba(155,59,204,1) 100%);
+}
+.psychic {
+  background: rgb(227,135,163);
+  background: linear-gradient(347deg, rgba(227,135,163,1) 0%, rgba(218,56,105,1) 100%);
+}
+.bug {
+  background: rgb(166,185,26);
+  background: linear-gradient(347deg, rgba(166,185,26,1) 0%, rgba(140,128,42,1) 100%);
+}
+.rock {
+  background: rgb(154,147,111);
+  background: linear-gradient(347deg, rgba(154,147,111,1) 0%, rgba(86,93,55,1) 100%);
+}
+.ghost {
+  background: rgb(115,87,151);
+  background: linear-gradient(347deg, rgba(115,87,151,1) 0%, rgba(57,56,126,1) 100%);
+}
+.dragon {
+  background: rgb(232,85,71);
+  background: linear-gradient(347deg, rgba(232,85,71,1) 0%, rgba(179,59,98,1) 100%);
+}
+.dark {
+  background: rgb(136,76,68);
+  background: linear-gradient(347deg, rgb(127, 82, 113) 0%, rgb(83, 43, 83) 100%);
+}
+.steel {
+  background: rgb(183,183,206);
+  background: linear-gradient(347deg, rgba(183,183,206,1) 0%, rgba(140,118,173,1) 100%);
+}
+.fairy {
+  background: rgb(213,156,185);
+  background: linear-gradient(347deg, rgba(213,156,185,1) 0%, rgba(201,117,151,1) 100%);
+}

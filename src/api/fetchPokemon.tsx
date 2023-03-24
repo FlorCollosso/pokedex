@@ -20,9 +20,11 @@ export async function fetchPokemon(
     attack: result.stats[1]?.base_stat,
     defense: result.stats[2]?.base_stat,
     speed: result.stats[5]?.base_stat,
-    height: result.height,
-    weight: result.weight,
-    types: result.types[1] ? `${result.types[0]?.type.name} & ${result.types[1]?.type.name}` : result.types[0]?.type.name
+    height: result.height/10,
+    weight: result.weight/10,
+    types: result.types[1] ? `${result.types[0]?.type.name} & ${result.types[1]?.type.name}` : result.types[0]?.type.name,
+    type: result.types[0].type.name,
+    typeSec: result.types[1]? result.types[1]?.type.name : '',
   };
   return pokemon;
 }
