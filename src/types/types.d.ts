@@ -2,6 +2,10 @@ export type Pokemon = {
     name: string;
     id: string;
     imgSrc: string;
+    total: number;
+    type: string;
+    typeSec: string;
+    types: any;
 };
 
 export type PokemonDetails = {
@@ -17,6 +21,8 @@ export type PokemonDetails = {
   types: any;
   type: string;
   typeSec: string;
+  special_attack: number;
+  special_defense: number;
 }
 
 export type PokemonText = {

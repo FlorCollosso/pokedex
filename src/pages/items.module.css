@@ -1,0 +1,31 @@
+.div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.span {
+    font-size: 10vw;
+    font-weight: 700;
+    margin-bottom: 5vw;
+    color: transparent;
+    background: #e18d8d;
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text;
+    text-shadow: 0px 3px 3px rgba(247, 191, 191, 0.4),0px -1px 1px rgba(0,0,0,0.3); 
+    /*animation: aumentarReducir 2s ease-in-out infinite;*/
+}
+
+@keyframes aumentarReducir {
+    0% {
+        scale: 1.03
+    }
+    50% {
+        scale: 1
+    }
+    100% {
+        scale: 1.03
+    }
+  }

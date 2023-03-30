@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { fetchPokemon } from "../api/fetchPokemon";
 import { fetchTextPokemon } from "../api/fetchTextPokemon";
-import LoadingScreen from "../components/LoadingScreen";
 import { PokemonDetails, PokemonText } from "../types/types";
+import { useNavigate, useParams } from "react-router-dom";
 import { formatText, formatTitle, waitFor } from "../utils/Utils";
 
-import { useNavigate, useParams } from "react-router-dom";
-import pokeballSrc from "../assets/pokeball.png";
-//import Footer from "../components/Footer";
+import LoadingScreen from "../components/LoadingScreen";
+import Nav from "../components/Nav";
+
 import styles from "./pokemon.module.css";
 import circle from "../assets/circle.png";
+import arrow from "../assets/arrow.png";
 
 import bug from "../assets/bug.png";
 import dark from "../assets/dark.png";
@@ -29,7 +30,6 @@ import psychic from "../assets/psychic.png";
 import rock from "../assets/rock.png";
 import steel from "../assets/steel.png";
 import water from "../assets/water.png";
-
 
 //Iterface for icons by type
 
@@ -85,6 +85,24 @@ const Pokemon = () => {
     return <LoadingScreen />;
   }
 
+  // Function to fetch next pokemon
+
+  const nextPokemon = async () => {
+    if (pokemon.id === "403") {
+      return;
+    }
+    navigate(`/pokemons/${parseInt(pokemon.id)+1}`);
+  };
+
+  // Function to fetch prev pokemon
+
+  const prevPokemon = async () => {
+    if (pokemon.id === "1") {
+      return;
+    }
+    navigate(`/pokemons/${parseInt(pokemon.id)-1}`);
+  };
+
   // Three digit format for pokemon number
 
   function formatNum(id: number) {
@@ -108,10 +126,8 @@ const Pokemon = () => {
   return (
     <>
         <section className={`${styles.section} ${styles[pokemon.type]}`}>
-          <button className={styles.pokeballButton} onClick={() => navigate(-1)}>
-            <img className={styles.pokeballImg} src={pokeballSrc} alt="pokeball" />
-            Go back
-          </button>
+          <Nav></Nav>
+          <button className={styles.buttonPrev} onClick={prevPokemon}><img className={styles.arrow} src={arrow} alt="arrow" /></button>
           <main className={styles.pokemon}>
             <div className={styles.pokemonInfo}>
               <div className={styles.containerInfo}>
@@ -122,27 +138,39 @@ const Pokemon = () => {
                     <div className={styles.containerStats}>
                     <div>
                       <div className={`${styles.divStatBar} ${'animate__animated animate__fadeInLeft animate__faster'}`}>
-                        <progress className={styles.barStat} value={pokemon?.hp} max='110'></progress>
+                        <progress className={styles.barStat} value={pokemon?.hp} max='160'></progress>
                         <span className={styles.stat}>
-                          HP
+                        <strong>HP </strong>{pokemon?.hp}
                         </span>
                       </div>
                       <div className={`${styles.divStatBar} ${'animate__animated animate__fadeInLeft animate__fast'}`}>
                         <progress className={styles.barStat} value={pokemon?.attack} max='150'></progress>
                         <span className={styles.stat}>
-                          Attack
+                        <strong>Attack </strong>{pokemon?.attack}
                         </span>
                       </div>
                       <div className={`${styles.divStatBar} ${'animate__animated animate__fadeInLeft animate__slow'}`}>
                         <progress className={styles.barStat} value={pokemon?.defense} max='150'></progress>
                         <span className={styles.stat}>
-                          Defense
+                          <strong>Defense </strong>{pokemon?.defense}
+                        </span>
+                      </div>
+                      <div className={`${styles.divStatBar} ${'animate__animated animate__fadeInLeft animate__slow'}`}>
+                        <progress className={styles.barStat} value={pokemon?.defense} max='150'></progress>
+                        <span className={styles.stat}>
+                          <strong>Sp Att </strong>{pokemon?.special_attack}
+                        </span>
+                      </div>
+                      <div className={`${styles.divStatBar} ${'animate__animated animate__fadeInLeft animate__slow'}`}>
+                        <progress className={styles.barStat} value={pokemon?.defense} max='150'></progress>
+                        <span className={styles.stat}>
+                          <strong>Sp Def </strong>{pokemon?.special_defense}
                         </span>
                       </div>
                       <div className={`${styles.divStatBar} ${'animate__animated animate__fadeInLeft animate__slower'}`}>
                         <progress className={styles.barStat} value={pokemon?.speed} max='150'></progress>
                         <span className={styles.stat}>
-                          Speed
+                        <strong>Speed </strong>{pokemon?.speed}
                         </span>
                       </div>
                     </div>
@@ -165,12 +193,6 @@ const Pokemon = () => {
                       </div>
                     </div>
                     </div>
-                    <div className={`${styles.divText} ${'animate__animated animate__fadeInUp'}`}>
-                      <img src={circle} alt={circle} />
-                      <span className={styles.spanText}>
-                        {formatText(pokemonText?.flavor_text)}
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -180,9 +202,16 @@ const Pokemon = () => {
                   src={pokemon?.imgSrc}
                   alt={pokemon?.name}
                 />
+                <div className={`${styles.divText} ${'animate__animated animate__fadeInUp'}`}>
+                    <img src={circle} alt="circle" />
+                    <span className={styles.spanText}>
+                        {formatText(pokemonText?.flavor_text, pokemon?.name)}
+                    </span>
+                </div>
               </div>
             </div>
           </main>
+          <button className={styles.buttonNext} onClick={nextPokemon}><img className={styles.arrow} src={arrow} alt="arrow" /></button>
         </section>
     </>
   );

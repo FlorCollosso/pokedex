@@ -1,17 +1,59 @@
 .header {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 10px;
-    place-items: center;
-    background: var(--bg-gradient);
+    padding: 1.5vw 3.5vw;
+    background: var(--bg-contrast);
+}
+
+.containerInput {
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    width: 1.8vw;
+    height: 1.8vw;
+    padding: .35vw;
+    border-radius: 5vw 0 0 5vw;
+    background-color: #525D80;
 }
 
 .input {
-    background-color: rgba(121, 121, 121, 0.267);
-    padding: 10px 10px;
-    border-radius: 5px;
-    margin: 10px 10px;
+    background-color: rgba(255, 255, 255, 0.918);
+    padding: .5vw;
+    border-radius: 0 5vw 5vw 0;
     border: none;
-    width: 80vw;
+    width: 30vw;
+}
+
+input:focus {
+    outline: none;
+}
+
+.containerMenu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #292929;
+    font-size: 2vw;
+    font-weight: 600;
+}
+
+.iconMenu {
+    height: 1.8vw;
+    margin-left: 2vw;
+}
+
+.iconMenu:hover {
+    scale: 1.03;
+    transition: all 100ms ease-in-out;
 }

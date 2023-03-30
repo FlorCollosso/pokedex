@@ -16,6 +16,10 @@ export async function fetchPokemons() {
         name: pokemon.name,
         id: pokemon.national_number,
         imgSrc: `https://img.pokemondb.net/sprites/black-white/anim/normal/${formatName(pokemon.name.toLowerCase())}.gif`,
+        total: pokemon.total,
+        types: pokemon.type[1] ? `${pokemon.type[0]} & ${pokemon.type[1]}` : pokemon.type[0],
+        type: pokemon.type[0],
+        typeSec: pokemon.type[1]? pokemon.type[1] : '',
     }))
 
     const uniquePokemons = pokemons.filter(

@@ -13,7 +13,9 @@ if (!response.ok) {
   const result = await response.json();
 
   const pokemonText = {
-    flavor_text: result.flavor_text_entries[2]?.flavor_text,
+    flavor_text: result.flavor_text_entries
+    .find((entry: { language: { name: string } }) => entry.language.name === "en")
+    ?.flavor_text,
   }
   return pokemonText;
 }

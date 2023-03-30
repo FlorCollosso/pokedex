@@ -1,5 +1,4 @@
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
@@ -9,6 +8,49 @@ import { fetchPokemons } from '../api/fetchPokemons';
 import LoadingScreen from '../components/LoadingScreen';
 import { waitFor } from '../utils/Utils';
 
+import bug from "../assets/bug.png";
+import dark from "../assets/dark.png";
+import dragon from "../assets/dragon.png";
+import electric from "../assets/electric.png";
+import fairy from "../assets/fairy.png";
+import fighting from "../assets/fighting.png";
+import fire from "../assets/fire.png";
+import flying from "../assets/flying.png";
+import ghost from "../assets/ghost.png";
+import grass from "../assets/grass.png";
+import ground from "../assets/ground.png";
+import ice from "../assets/ice.png";
+import normal from "../assets/normal.png";
+import poison from "../assets/poison.png";
+import psychic from "../assets/psychic.png";
+import rock from "../assets/rock.png";
+import steel from "../assets/steel.png";
+import water from "../assets/water.png";
+
+interface TypeImages {
+    [type: string]: string;
+}
+  
+const typeImages: TypeImages = {
+    Water: water,
+    Fire: fire,
+    Grass: grass,
+    Electric: electric,
+    Bug: bug,
+    Flying: flying,
+    Poison: poison,
+    Psychic: psychic,
+    Rock: rock,
+    Ground: ground,
+    Ice: ice,
+    Ghost: ghost,
+    Dragon: dragon,
+    Dark: dark,
+    Steel: steel,
+    Fairy: fairy,
+    Fighting: fighting,
+    Normal: normal,
+};
 
 const Pokemons = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +71,7 @@ const Pokemons = () => {
     if (isLoading || !pokemons) {
         return <LoadingScreen />;
     }
-
+    
     const filteredPokemons = pokemons.slice(0, 403).filter((pokemon) => {
         return pokemon.name.toLowerCase().match(query.toLowerCase())
     })
@@ -44,20 +86,39 @@ const Pokemons = () => {
             className={styles.listItem}
             to={`/pokemons/${pokemon.id}`}
             >
-                <img
-                    className={styles.listItemIcon}
-                    src={pokemon.imgSrc}
-                    alt={pokemon.name}
-                />
+                <div className={styles.containerImg}>
+                    <img
+                        className={styles.imgPokemon}
+                        src={pokemon.imgSrc}
+                        alt={pokemon.name}
+                    />
+                    <span>{pokemon.id}</span>
+                </div>
+
                 <div className={styles.listItemText}>
                     <span>{pokemon.name}</span>
-                    <span>{pokemon.id}</span>
+                    <span>Total: {pokemon.total}</span>
+                    <div className={styles.pokemonTypes}>
+                        <span>Types: {pokemon.types}</span>
+                        <div>
+                        <img
+                            className={styles.listItemIcon}
+                            src={typeImages[pokemon.type]}
+                            alt={pokemon.type}
+                        />
+                        {typeImages[pokemon.typeSec] && 
+                        <img 
+                        className={styles.listItemIcon} 
+                        src={typeImages[pokemon.typeSec]} 
+                        alt={pokemon.typeSec} 
+                        />}
+                        </div>
+                    </div>
                 </div>
             </Link>
             ))}
         </nav>
     </main>
-    <Footer/>
     </>
 };
 

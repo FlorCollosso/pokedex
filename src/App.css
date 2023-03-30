@@ -12,23 +12,30 @@
 :root {
   --bg-color: #fafafa;
   --bg-gradient: linear-gradient(105deg, rgba(184, 203, 237, 1) 0%, rgba(222, 245, 221, 1) 100%);
-  --bg-border: linear-gradient(90deg, rgba(124, 166, 252, 1) 0%, rgba(119, 235, 129, 1) 100%);
+  --bg-contrast: #1C2234;
 }
 
 body {
   font-family: 'Segoe UI', 'Open Sans', sans-serif;
   height: fit-content;
+  overflow-x: hidden;
+  background-image: url(assets/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.app {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  height: 100%;
+/* ancho y altura de la scrollbar */
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
 }
 
-.app main {
-  background-color: var(--bg-color);
-  padding: 10px;
-  height: 100%;
-  overflow: hidden;
+/* fondo transparente */
+::-webkit-scrollbar-track {
+  background-color: var(--bg-contrast);
+}
+
+/* barra de desplazamiento gris oscuro */
+::-webkit-scrollbar-thumb {
+  background-color: #525D80;
 }

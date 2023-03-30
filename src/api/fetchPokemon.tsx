@@ -19,6 +19,8 @@ export async function fetchPokemon(
     hp: result.stats[0]?.base_stat,
     attack: result.stats[1]?.base_stat,
     defense: result.stats[2]?.base_stat,
+    special_attack: result.stats[3]?.base_stat,
+    special_defense: result.stats[4]?.base_stat,
     speed: result.stats[5]?.base_stat,
     height: result.height/10,
     weight: result.weight/10,

@@ -29,7 +29,7 @@ if (name.includes("-f")) {
 return name;
 }
 
-export function formatText(flavor_text: any): string {
+export function formatText(flavor_text: any, name: string): string {
   
   const formattedText = flavor_text
     .replace(/\f/g, '\n')
@@ -37,11 +37,9 @@ export function formatText(flavor_text: any): string {
     .replace(/\u00ad/g, '')
     .replace(/ -\n/g, ' - ')
     .replace(/-\n/g, '-')
-    .replace(/\n/g, ' ');
-  
-    if (formattedText.includes("POKéMON")) {
-      return formattedText.replace("POKéMON", "pokémon");
-    }
+    .replace(/\n/g, ' ')
+    .replace('POKéMON', 'pokemon')
+    .replace(name.toUpperCase(), name.charAt(0).toUpperCase() + name.slice(1).toLowerCase())
 
   return formattedText;
 }
