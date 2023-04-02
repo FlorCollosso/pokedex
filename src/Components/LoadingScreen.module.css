@@ -6,9 +6,29 @@
 }
 
 .loadingScreenIcon {
-    width: 30%;
-    height: 30%;
+    width: 50%;
+    height: 50%;
     max-width: 200px;
     max-height: 200px;
     object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+    animation: shadow-rotate 2s infinite ease-in-out;
+}
+
+@keyframes shadow-rotate {
+    0% {
+        filter: drop-shadow(0 0 13px rgba(255, 68, 0, 0.8)) drop-shadow(0 0 50px rgba(255, 162, 0, 0.3));
+    }
+    25% {
+        filter: drop-shadow(0 0 13px rgba(255, 68, 0, 0.8)) drop-shadow(0 0 50px rgba(255, 225, 0, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 13px rgba(255, 68, 0, 0.8)) drop-shadow(0 0 50px rgba(255, 162, 0, 0.3));
+    }
+    75% {
+        filter: drop-shadow(0 0 13px rgba(255, 68, 0, 0.8)) drop-shadow(0 0 50px rgba(255, 225, 0, 0.3));
+    }
+    100% {
+        filter: drop-shadow(0 0 13px rgba(255, 68, 0, 0.8)) drop-shadow(0 0 50px rgba(255, 162, 0, 0.3));
+    }
 }

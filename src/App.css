@@ -11,8 +11,9 @@
 
 :root {
   --bg-color: #fafafa;
-  --bg-gradient: linear-gradient(105deg, rgba(184, 203, 237, 1) 0%, rgba(222, 245, 221, 1) 100%);
+  --bg-gradient: linear-gradient(105deg, rgb(41, 42, 44) 0%, rgb(34, 30, 45) 100%);
   --bg-contrast: #1C2234;
+  --bg-light: #DFDDDD;
 }
 
 body {
@@ -20,8 +21,8 @@ body {
   height: fit-content;
   overflow-x: hidden;
   background-image: url(assets/background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat-y;
+  
 }
 
 /* ancho y altura de la scrollbar */

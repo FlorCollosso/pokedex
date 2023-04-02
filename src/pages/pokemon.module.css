@@ -9,7 +9,7 @@
   color: white;
   padding-top: 3vw;
   position: relative;
-  top: -3vw;
+  top: -1vw;
   z-index: 1;
 }
 
@@ -148,7 +148,7 @@ strong {
   width: 50vw;
   position: relative;
   bottom: -6vw;
-  left: -4vw;
+  left: -3vw;
   filter: drop-shadow(10px 2px 20px rgba(0, 0, 0, 0.3));
 }
 
@@ -176,8 +176,8 @@ strong {
   align-items: center;
   font-size: .8vw;
   position: relative;
-  bottom: 7vw;
-  left: -8vw;
+  bottom: 5vw;
+  left: -10vw;
   color: black;
   margin-left: 3vw;
 }
@@ -196,26 +196,27 @@ strong {
   z-index: 2;
 }
 
-.buttonNext {
+.divButtons {
+  display: flex;
   position: relative;
+  bottom: 11vw;
+  left: 85%;
+  z-index: 2;
+}
+
+.buttonNext {
   background: none;
   border: none;
   opacity: .2;
-  bottom: 12.5vw;
-  left: 51%;
-  z-index: 2;
   cursor: pointer;
+  margin-left: 3vw;
 }
 
 .buttonPrev {
-  position: relative;
   transform: rotateX(180deg);
   background: none;
   border: none;
   opacity: .2;
-  top: 2vw;
-  left: 51%;
-  z-index: 2;
   cursor: pointer;
 }
 
@@ -225,7 +226,7 @@ strong {
 }
 
 .arrow {
-  width: 4vw;
+  width: 3vw;
 }
 
 /* Color by Type */

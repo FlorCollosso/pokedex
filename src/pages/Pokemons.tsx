@@ -55,12 +55,13 @@ const typeImages: TypeImages = {
 const Pokemons = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [query, setQuery] = useState("");
+    const [type, setType] = useState("");
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
     useEffect(() => {
         const fetchAllPokemons = async () => {
           setIsLoading(true);
-          await waitFor(1000);
+          await waitFor(2000);
           const allPokemons = await fetchPokemons();
           setPokemons(allPokemons);
           setIsLoading(false);
@@ -70,18 +71,21 @@ const Pokemons = () => {
 
     if (isLoading || !pokemons) {
         return <LoadingScreen />;
-    }
-    
+    }   
+
     const filteredPokemons = pokemons.slice(0, 403).filter((pokemon) => {
-        return pokemon.name.toLowerCase().match(query.toLowerCase())
-    })
+        if (query) {
+            return pokemon.name.toLowerCase().match(query.toLowerCase()) && pokemon.type.toLowerCase().match(type.toLowerCase());
+        }
+        return pokemon.type.toLowerCase().match(type.toLowerCase());
+    });
 
     return <>
-    <Header query={query} setQuery={setQuery}/>
+    <Header query={query} setQuery={setQuery} type={type} setType={setType}/>
     <main>
         <nav className={styles.nav}>
             {filteredPokemons?.slice(0, 403).map((pokemon) =>(
-            <Link
+            <Link 
             key={pokemon.id}
             className={styles.listItem}
             to={`/pokemons/${pokemon.id}`}

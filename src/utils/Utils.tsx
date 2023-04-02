@@ -39,7 +39,26 @@ export function formatText(flavor_text: any, name: string): string {
     .replace(/-\n/g, '-')
     .replace(/\n/g, ' ')
     .replace('POKéMON', 'pokemon')
+    .replace('POKéMON ', 'pokemon ')
+    .replace('POKé BALL', 'Pokeball')
+    .replace('TRAINER', 'Trainer')
+    .replace('PORYGON', 'Porygon')
+    .replace('KYOGRE', 'Kyogre')
+    .replace('BEAUTIFLY', 'Beautifly')
     .replace(name.toUpperCase(), name.charAt(0).toUpperCase() + name.slice(1).toLowerCase())
 
   return formattedText;
 }
+
+
+// Three digit format for pokemon number
+
+export function formatNum(id: number) {
+  if (id < 10) {
+    return ("00" + id);
+  }else if (id < 100) {
+    return ("0" + id);
+  }else {
+    return id;
+  }
+};

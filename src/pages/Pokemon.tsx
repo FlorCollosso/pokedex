@@ -3,7 +3,7 @@ import { fetchPokemon } from "../api/fetchPokemon";
 import { fetchTextPokemon } from "../api/fetchTextPokemon";
 import { PokemonDetails, PokemonText } from "../types/types";
 import { useNavigate, useParams } from "react-router-dom";
-import { formatText, formatTitle, waitFor } from "../utils/Utils";
+import { formatNum, formatText, formatTitle, waitFor } from "../utils/Utils";
 
 import LoadingScreen from "../components/LoadingScreen";
 import Nav from "../components/Nav";
@@ -103,18 +103,19 @@ const Pokemon = () => {
     navigate(`/pokemons/${parseInt(pokemon.id)-1}`);
   };
 
-  // Three digit format for pokemon number
 
-  function formatNum(id: number) {
-    if (id < 10) {
-      return ("00" + id);
-    }else if (id < 100) {
-      return ("0" + id);
-    }else {
-      return id;
+  // Scroll event
+  
+  const doc = document;
+
+  doc.addEventListener("wheel", function(event) {
+    if (event.deltaY > 0) {
+      nextPokemon();
+    } else if (event.deltaY < 0) {
+      prevPokemon(); 
     }
-  };
-
+  });
+  
   // Icons by type
 
   const typePrincipal = typeImages[pokemon.type];
@@ -127,7 +128,6 @@ const Pokemon = () => {
     <>
         <section className={`${styles.section} ${styles[pokemon.type]}`}>
           <Nav></Nav>
-          <button className={styles.buttonPrev} onClick={prevPokemon}><img className={styles.arrow} src={arrow} alt="arrow" /></button>
           <main className={styles.pokemon}>
             <div className={styles.pokemonInfo}>
               <div className={styles.containerInfo}>
@@ -211,7 +211,10 @@ const Pokemon = () => {
               </div>
             </div>
           </main>
+          <div className={styles.divButtons} >
+          <button className={styles.buttonPrev} onClick={prevPokemon}><img className={styles.arrow} src={arrow} alt="arrow" /></button>
           <button className={styles.buttonNext} onClick={nextPokemon}><img className={styles.arrow} src={arrow} alt="arrow" /></button>
+          </div>
         </section>
     </>
   );

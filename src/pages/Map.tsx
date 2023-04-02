@@ -1,8 +1,8 @@
 import Nav from '../components/Nav';
-import styles from './items.module.css'
+import styles from './map.module.css'
 import comingSoon from '../assets/comingSoon.gif';
 
-const Items = () => {
+const Map = () => {
     return (
         <body>
             <Nav />
@@ -14,4 +14,4 @@ const Items = () => {
     )
 };
 
-export default Items;
+export default Map;

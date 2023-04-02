@@ -3,7 +3,7 @@
   position: fixed;
   justify-content: space-between;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .random {
@@ -133,7 +133,7 @@
   justify-content: space-around;
   align-items: center;
   width: 210vh;
-  height: 100vh;
+  height: 101vh;
   right: -3vw;
   top: -3vw;
   padding: 3vw 10vw ;

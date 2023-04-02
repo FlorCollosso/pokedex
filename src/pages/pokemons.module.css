@@ -1,5 +1,5 @@
 .nav {
-  padding: 1vw 2vw;
+  padding: 7vw 2vw 1vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -8,7 +8,7 @@
 .listItem {
   display: flex;
   flex-direction: column;
-  margin: 1.5vw 1vw;
+  margin: 1vw;
   text-decoration: none;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .listItemText > :first-child {
-  font-size: 2rem;
+  font-size: 1.7vw;
   display: block;
   margin-bottom: .5vw;
   font-weight: bold;
