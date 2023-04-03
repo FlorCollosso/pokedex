@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.78a4fba4.css",
+    "main.js": "/static/js/main.f15b65f0.js",
+    "static/media/background.png": "/static/media/background.ff886de3b5a80771573e.png",
+    "static/media/comingSoon.gif": "/static/media/comingSoon.9b8b93fa590e754385ce.gif",
+    "static/media/pokedex.png": "/static/media/pokedex.5037bf3372e430881bb0.png",
+    "static/media/fire.png": "/static/media/fire.fb9d4e98c6a53d969140.png",
+    "static/media/ground.png": "/static/media/ground.ebcf3995452818d7d38a.png",
+    "static/media/ice.png": "/static/media/ice.eec77e72cf67b3f27b19.png",
+    "static/media/poison.png": "/static/media/poison.485cba437f15caf9668a.png",
+    "static/media/psychic.png": "/static/media/psychic.ff4bccf9ded8b27e8138.png",
+    "static/media/steel.png": "/static/media/steel.64f9a8be86b41d348874.png",
+    "static/media/ghost.png": "/static/media/ghost.e5a7c195fe316eb8f7be.png",
+    "static/media/dragon.png": "/static/media/dragon.a8170e618800e062087b.png",
+    "static/media/dark.png": "/static/media/dark.ec530c15198cb0096046.png",
+    "static/media/fighting.png": "/static/media/fighting.0f0384604b4407a823b2.png",
+    "static/media/electric.png": "/static/media/electric.a1037db05715ea5c5acb.png",
+    "static/media/fairy.png": "/static/media/fairy.5d8517d14fc7fa82e773.png",
+    "static/media/rock.png": "/static/media/rock.88fe93f4a69d69ce5c2f.png",
+    "static/media/bug.png": "/static/media/bug.27bedce53cf8b85de47d.png",
+    "static/media/flying.png": "/static/media/flying.7c440dd3076d717aa6d0.png",
+    "static/media/grass.png": "/static/media/grass.fbb4709300b9cb473bf9.png",
+    "static/media/water.png": "/static/media/water.64aa05e80d8e1b8e6402.png",
+    "static/media/normal.png": "/static/media/normal.c06deee14f84f8216906.png",
+    "static/media/circle.png": "/static/media/circle.10c39fcd48fba5156055.png",
+    "static/media/random.png": "/static/media/random.4d99732b44ba8e3846b5.png",
+    "static/media/pointer.png": "/static/media/pointer.ebe13936ca3b2b44edb3.png",
+    "static/media/pikachu.png": "/static/media/pikachu.cb81c8c0d7c92787bb35.png",
+    "static/media/pokeball.png": "/static/media/pokeball.9fc0eeaeda972e93ebc7.png",
+    "static/media/arrow.png": "/static/media/arrow.9f3622dbf4e8bd1dd5c2.png",
+    "static/media/filter.svg": "/static/media/filter.a29e935e6e1b449694a7a65c893a6a3a.svg",
+    "index.html": "/index.html",
+    "main.78a4fba4.css.map": "/static/css/main.78a4fba4.css.map",
+    "main.f15b65f0.js.map": "/static/js/main.f15b65f0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78a4fba4.css",
+    "static/js/main.f15b65f0.js"
+  ]
+}
