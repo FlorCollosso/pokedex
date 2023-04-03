@@ -149,7 +149,7 @@ strong {
   position: relative;
   bottom: -6vw;
   left: -3vw;
-  filter: drop-shadow(10px 2px 20px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(10px 2px 10px rgba(0, 0, 0, 0.2));
 }
 
 .spanTS {
@@ -185,6 +185,7 @@ strong {
 .divText img {
   width: 70%;
   position: absolute;
+  filter: drop-shadow(10px 2px 10px rgba(0, 0, 0, 0.2));
 }
 
 .spanText {

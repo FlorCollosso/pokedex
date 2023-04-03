@@ -22,7 +22,7 @@ body {
   overflow-x: hidden;
   background-image: url(assets/background.png);
   background-repeat: repeat-y;
-  
+  text-decoration: none;
 }
 
 /* ancho y altura de la scrollbar */

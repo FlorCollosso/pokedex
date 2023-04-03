@@ -109,10 +109,14 @@ const Pokemon = () => {
   const doc = document;
 
   doc.addEventListener("wheel", function(event) {
-    if (event.deltaY > 0) {
-      nextPokemon();
-    } else if (event.deltaY < 0) {
-      prevPokemon(); 
+    const currentUrl = window.location.href;
+    
+    if (currentUrl.includes(`/pokemons/`)) {
+      if (event.deltaY > 0) {
+        nextPokemon();
+      } else if (event.deltaY < 0) {
+        prevPokemon(); 
+      }
     }
   });
   

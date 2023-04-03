@@ -50,7 +50,7 @@ const Nav = () => {
                     <img className={styles.iconMenu} src={Pikachu} alt="Pickachu" />
                     Pokemons
                 </Link>
-                <Link to="/location" className={styles.navLink}>
+                <Link to="/map" className={styles.navLink}>
                     <img className={styles.iconMenu} src={Pointer} alt="Pointer" />
                     Map
                 </Link>
