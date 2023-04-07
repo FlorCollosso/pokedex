@@ -4,7 +4,7 @@ export async function fetchRandom(
 
 ): Promise<PokemonDetails> {
 
-    const totalPokemon = 403;
+    const totalPokemon = 649;
     const randomIndex = Math.floor(Math.random() * totalPokemon) + 1;
     const randomId = randomIndex.toString();
 

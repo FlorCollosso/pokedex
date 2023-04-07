@@ -21,8 +21,9 @@ body {
   height: fit-content;
   overflow-x: hidden;
   background-image: url(assets/background.png);
-  background-repeat: repeat-y;
-  text-decoration: none;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* ancho y altura de la scrollbar */

@@ -3,9 +3,11 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: rgba(0,0,0,0.3);
 }
 
 .gif {
     width: 75vw;
     filter: drop-shadow(15px 5px 10px rgba(0,0,0,0.3));
+    margin-right: 2vw;
 }

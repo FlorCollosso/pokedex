@@ -25,6 +25,10 @@ if (name.includes("-f")) {
   return name.replace("-", ". ")
 }else if (name.includes("fetchd")) {
   return name.replace("fetchd", "fetch'd");
+}else if (name.includes("-ordinary")) {
+  return name.replace("-ordinary", "");
+}else if (name.includes("-incarnate")) {
+  return name.replace("-incarnate", "");
 } 
 return name;
 }

@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aw s3 sync build/ s3://mypokedex --acl public-read"
+    "deploy": "aws s3 sync build/ s3://mypokedex --acl public-read"
   },
   "eslintConfig": {
     "extends": [
