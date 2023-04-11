@@ -168,13 +168,13 @@ const Pokemon = () => {
                           </span>
                         </div>
                         <div className={`${styles.divStatBar} ${'animate__animated animate__fadeInLeft animate__slow'}`}>
-                          <progress className={styles.barStat} value={pokemon?.defense} max='160'></progress>
+                          <progress className={styles.barStat} value={pokemon?.special_attack} max='160'></progress>
                           <span className={styles.stat}>
                             <strong>Sp Att </strong>{pokemon?.special_attack}
                           </span>
                         </div>
                         <div className={`${styles.divStatBar} ${'animate__animated animate__fadeInLeft animate__slow'}`}>
-                          <progress className={styles.barStat} value={pokemon?.defense} max='160'></progress>
+                          <progress className={styles.barStat} value={pokemon?.special_defense} max='160'></progress>
                           <span className={styles.stat}>
                             <strong>Sp Def </strong>{pokemon?.special_defense}
                           </span>
