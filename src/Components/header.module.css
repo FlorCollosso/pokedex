@@ -3,7 +3,6 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
     font-weight: bold;
     padding: 1.5vw 3.5vw;
     background: var(--bg-contrast);
@@ -13,6 +12,7 @@
 .containerInput {
     display: flex;
     align-items: center;
+    margin: 1vw 0;
 }
 
 .searchIcon {
@@ -30,6 +30,7 @@
     border-radius: 0 5vw 5vw 0;
     border: none;
     width: 30vw;
+    font-size: 1.8vh;
 }
 
 input:focus {
@@ -39,6 +40,7 @@ input:focus {
 .containerMenu {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .menuLink {
@@ -48,8 +50,6 @@ input:focus {
     text-align: center;
     text-decoration: none;
     color: #292929;
-    font-size: 2vw;
-    font-weight: 600;
 }
 
 .iconMenu {
@@ -71,6 +71,8 @@ input:focus {
     background: none;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .filterOverflow {
@@ -177,4 +179,192 @@ input:focus {
     height: 100vh;
     background: #07011eca;
     z-index: 1;
+}
+
+
+/* Responsive */
+
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+    .header {
+        padding: 1vw 4vw;
+    }
+    
+    .searchIcon {
+        width: 2.6vw;
+        height: 2.6vw;
+        padding: .3vw;
+    }
+    
+    .input {
+        height: 2.6vw;
+        padding-left: 1vw;
+        width: 35vw;
+        font-size: 1.4vw;
+    }
+
+    .iconMenu {
+        height: 2.1vw;
+        margin-left: 2vw;
+    }
+    
+    .filter {
+        width: 1.8vw;
+    }
+
+    .filterButton {
+        margin-left: 1.8vw;
+    }
+
+    .filterConatiner {
+        top: -20vw;
+    }
+
+    .filterOverflow {
+        top: 2.1vw;
+        left: 43vw;
+    }
+
+    .backgroundFilter {
+        top: 6.6vw;
+    }
+  }
+
+/* For Tablet View */
+@media screen and (min-device-width: 640px)
+  and (max-device-width: 1024px) {
+    .header {
+        padding: 1vw 4vw;
+    }
+    
+    .searchIcon {
+        width: 2.6vw;
+        height: 2.6vw;
+        padding: .3vw;
+    }
+    
+    .input {
+        height: 2.6vw;
+        padding-left: 1vw;
+        width: 35vw;
+        font-size: 1.4vw;
+    }
+
+    .iconMenu {
+        height: 2.1vw;
+        margin-left: 2vw;
+    }
+    
+    .filter {
+        width: 1.8vw;
+    }
+
+    .filterButton {
+        margin-left: 1.8vw;
+    }
+
+    .filterConatiner {
+        top: -20vw;
+    }
+
+    .filterOverflow {
+        top: 2.1vw;
+        left: 43vw;
+    }
+
+    .backgroundFilter {
+        top: 6.6vw;
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) {
+    .header {
+        padding: 1.5vw 4.5vw;
+    }
+    
+    .searchIcon {
+        width: 2.7vw;
+        height: 2.7vw;
+        padding: .3vw;
+    }
+    
+    .input {
+        height: 2.8vw;
+        padding-left: 1vw;
+        width: 35vw;
+        font-size: 1.4vw;
+    }
+
+    .iconMenu {
+        height: 2.5vw;
+        margin-left: 2vw;
+    }
+    
+    .filter {
+        width: 1.8vw;
+    }
+
+    .filterButton {
+        margin-left: 1.8vw;
+    }
+
+    .filterConatiner {
+        top: -20vw;
+    }
+
+    .filterOverflow {
+        top: 2.5vw;
+        left: 44vw;
+    }
+
+    .backgroundFilter {
+        top: 5vw;
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) {
+    .header {
+        padding: 1vw 5vw;
+    }
+
+    .searchIcon {
+        width: 2.6vw;
+        height: 2.6vw;
+        padding: .3vw;
+    }
+    
+    .input {
+        height: 2.6vw;
+        padding-left: 1vw;
+        width: 35vw;
+        font-size: 1.4vw;
+    }
+
+    .iconMenu {
+        height: 2.1vw;
+        margin-left: 2vw;
+    }
+    
+    .filter {
+        width: 1.8vw;
+    }
+
+    .filterButton {
+        margin-left: 1.8vw;
+    }
+
+    .filterConatiner {
+        top: -20vw;
+    }
+
+    .filterOverflow {
+        top: 2.1vw;
+        left: 44vw;
+    }
+
+    .backgroundFilter {
+        top: 6.65vw;
+    }
 }

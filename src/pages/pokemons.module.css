@@ -32,10 +32,8 @@
   position: relative;
   right: 50%;
   transform: translateX(50%);
-  top: 10%;
   object-fit: contain;
 }
-
 
 .listItemText {
   padding: 1vw 1.5vw 0;
@@ -80,5 +78,145 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+
+/* Responsive */
+ 
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+  .containerImg {
+    height: 55%;
+    padding: 4vw 1.5vw .5vw;
+  }
+
+  .imgPokemon {
+    width: 7vw;
+    max-height: 5vw;
+  }
+  
+  .listItemText {
+    padding: 1.3vw 1.5vw .5vw;
+    font-size: .85vw;
+  }
+  
+  .listItemText > :first-child {
+    font-size: 1.4vw;
+  }
+
+  .listItemText > :last-child {
+    margin-top: .4vw;
+  }
+
+  .listItemIcon {
+    width: 1.4vw;
+  }
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 640px)
+  and (max-device-width: 1024px) {
+    .containerImg {
+      height: 55%;
+      padding: 4vw 1.5vw .5vw;
+    }
+
+    .imgPokemon {
+      width: 7vw;
+      max-height: 5vw;
+    }
+    
+    .listItemText {
+      padding: 1.3vw 1.5vw .5vw;
+      font-size: .8vw;
+    }
+    
+    .listItemText > :first-child {
+      font-size: 1.4vw;
+    }
+
+    .listItemText > :last-child {
+      margin-top: .4vw;
+    }
+
+    .listItemIcon {
+      width: 1.4vw;
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) {
+    .nav {
+      padding: 8vw 3vw 1vw;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .listItem {
+      margin: 1.5vw;
+    }
+
+    .containerImg {
+      height: 100%;
+      padding: 5vw 1.5vw 1.5vw;
+    }
+
+    .imgPokemon {
+      width: 11vw;
+      max-height: 9vw;
+    }
+    
+    .listItemText {
+      padding: 1.8vw 1.8vw 1.7vw;
+      font-size: 1.5vw;
+      height: 100%;
+    }
+    
+    .listItemText > :first-child {
+      font-size: 2.3vw;
+    }
+
+    .listItemText > :last-child {
+      margin-top: .5vw;
+    }
+
+    .listItemIcon {
+      width: 2vw;
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) {
+    .nav {
+      padding: 8vw 4vw 1vw;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .containerImg {
+      height: 100%;
+      font-size: 1.8vw;
+      padding: 4vw 1.5vw .5vw;
+    }
+
+    .imgPokemon {
+      width: 8vw;
+      max-height: 6vw;
+    }
+    
+    .listItemText {
+      padding: 1.3vw 1.6vw 1.5vw;
+      font-size: 1.1vw;
+    }
+    
+    .listItemText > :first-child {
+      font-size: 2vw;
+    }
+
+    .listItemText > :last-child {
+      margin-top: .5vw;
+    }
+
+    .listItemIcon {
+      width: 1.6vw;
+    }
 }
   
