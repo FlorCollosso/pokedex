@@ -2,8 +2,10 @@
   display: flex;
   position: fixed;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   z-index: 3;
+  padding: 3vw 0;
 }
 
 .random {
@@ -11,8 +13,9 @@
   border: none;
   cursor: pointer;
   position: absolute;
+  display: flex;
+  align-items: center;
   right: 7vw;
-  top: 2.8vw;
 }
 
 .random img {
@@ -37,7 +40,8 @@
   display: flex;
   align-items: center;
   background: none;
-  padding: 50px 50px 0 50px;
+  font-size: 1vw;
+  padding: 0 3vw;
   color: var(--bg-color);
   position: relative;
   z-index: 2;
@@ -49,15 +53,14 @@
 }
   
 .pokeballImg {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-right: .5vw;
 }
 
 .menuToggle {
   display: block;
   position: relative;
-  top: 2.8vw;
   right: 3vw;
   z-index: 1;
   -webkit-user-select: none;
@@ -75,14 +78,11 @@
   scale: 1.1;
 }
 
-
 .menuToggle input {
   display: block;
-  width: 40px;
-  height: 32px;
+  width: 2vw;
+  height: 1.8vw;
   position: absolute;
-  top: -7px;
-  left: -5px;
   cursor: pointer;
   opacity: 0;
   z-index: 2; 
@@ -91,9 +91,8 @@
 
 .menuToggle span {
   display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
+  width: 1.8vw;
+  height: .2vw;
   position: relative;
   background: var(--bg-color);
   border-radius: 3px;
@@ -106,15 +105,17 @@
 
 .menuToggle span:first-child {
   transform-origin: 0% 0%;
+  margin-bottom: .3vw;
 }
 
 .menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
+  margin-bottom: .3vw;
 }
 
 .menuToggle input:checked ~ span {
   opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
+  transform: rotate(45deg) translate(-.2vh, -.1vh);
   background: var(--bg-color);
 }
 
@@ -124,18 +125,19 @@
 }
 
 .menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
+  transform: rotate(-45deg) translate(0, -.1vh);
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 210vh;
-  height: 101vh;
+  width: 110%;
+  height: 110%;
+  overflow: hidden;
   right: -3vw;
-  top: -3vw;
+  top: -4vw;
   padding: 3vw 10vw ;
   background: var(--bg-contrast);
   list-style-type: none;
@@ -157,4 +159,168 @@
 .iconMenu {
   height: 4vw;
   margin-bottom: .5vw;
+}
+
+/* Responsive */
+
+/* For Tablet View */
+@media screen and (min-device-width: 640px)
+  and (max-device-width: 1024px) {
+    .nav {
+      width: 100%;
+      z-index: 3;
+      padding: 5vw 5vw 0 5vw;
+    }
+  
+    .random {
+      right: 14vw;
+    }
+  
+    .random img {
+      width: 2.5vw;
+    }
+  
+    .menuToggle span {
+      width: 3vw;
+      height: .3vw;
+      margin-bottom: .5vw;
+    }
+
+    .menuToggle input:checked ~ span {
+      transform: rotate(45deg) translate(-.2vh, .1vh);
+    }
+
+    .menuToggle input:checked ~ span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -.1vh);
+    }
+
+    .navLink {
+      font-size: 3vw;
+      font-weight: 400;
+    }
+    
+    .pokeballButton {
+      font-size: 2vw;
+    }
+      
+    .pokeballImg {
+      width: 2.8vw;
+      height: 3vw;
+      margin-right: 1vw;
+    }
+  
+    .iconMenu {
+      height: 6vw;
+      margin-bottom: 1.5vw;
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) {
+  .nav {
+    width: 100%;
+    z-index: 3;
+    padding: 5vw 5vw 0 5vw;
+  }
+
+  .random {
+    right: 14vw;
+  }
+
+  .random img {
+    width: 2.5vw;
+  }
+
+  .menuToggle span {
+    width: 3vw;
+    height: .3vw;
+    margin-bottom: .5vw;
+  }
+
+  .menuToggle input:checked ~ span {
+    transform: rotate(45deg) translate(-.1vh, .15vh);
+  }
+  
+  .menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -.1vh);
+  }
+
+  .navLink {
+    font-size: 3vw;
+    font-weight: 400;
+  }
+  
+  .pokeballButton {
+    font-size: 2vw;
+  }
+    
+  .pokeballImg {
+    width: 2.8vw;
+    height: 3vw;
+    margin-right: 1vw;
+  }
+
+  .iconMenu {
+    height: 6vw;
+    margin-bottom: 1.5vw;
+  }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 850px)
+and (min-device-width: 480px) {
+  .nav {
+    width: 100%;
+    z-index: 3;
+    padding: 5vw 5vw 0 5vw;
+  }
+
+  .random {
+    right: 14vw;
+  }
+
+  .random img {
+    width: 2vw;
+  }
+
+  .menuToggle span {
+    width: 2.6vw;
+    height: .2vw;
+  }
+  
+  .menuToggle span:first-child {
+    margin-bottom: .2vw;
+  }
+  
+  .menuToggle span:nth-last-child(2) {
+    margin-bottom: .2vw;
+  }
+
+  .menuToggle input:checked ~ span {
+    transform: rotate(45deg) translate(-.2vh, .2vh);
+  }
+  
+  .menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -.1vh);
+  }
+
+  .navLink {
+    font-size: 2.5vw;
+    font-weight: 400;
+  }
+  
+  .pokeballButton {
+    font-size: 1.3vw;
+  }
+    
+  .pokeballImg {
+    width: 2vw;
+    height: 2vw;
+    margin-right: 1vw;
+  }
+
+  .iconMenu {
+    height: 4.5vw;
+    margin-bottom: 1.2vw;
+  }
 }

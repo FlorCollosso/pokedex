@@ -303,3 +303,229 @@ strong {
   background: rgb(213,156,185);
   background: linear-gradient(347deg, rgba(213,156,185,1) 0%, rgba(201,117,151,1) 100%);
 }
+
+/* Responsive */
+
+/* For Tablet View */
+@media screen and (min-device-width: 640px)
+  and (max-device-width: 1024px) {
+    .pokeLogo {
+      width: 100vw;
+      transform: translateX(20%);
+      top: -15vw;
+    }
+    
+    .containerInfo {
+      max-height: 90vw;
+      position: relative;
+      top: -5vw;
+    }
+    
+    .containerDivInfo {
+      bottom: 0;
+    }
+    
+    .pokemonInfo {
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 5vw;
+    }
+    
+    .pokeNumber {
+      margin: 0;
+      font-size: 30vw;
+    }
+    
+    .pokemonTitle {
+      font-size: 12vw;
+      bottom: 20.5vw;
+    }
+    
+    .containerStats {
+      bottom: 20vw;
+      width: 76vw;
+    }
+    
+    .divStatBar {
+      margin-top: 2vw;
+    }
+    
+    .stat {
+      font-size: 2.5vw;
+      margin-left: 1vw;
+    }
+    
+    progress[value] {
+      height: 2vw;
+    }
+    
+    .divStats {
+      margin-top: 4vw;
+      font-size: 2.2vw;
+    }
+    
+    .spanStat {
+      margin-top: 1.5vw; 
+    }
+    
+    strong {
+      margin-right: 1.5vw;
+    }
+    
+    .pokemonInfoImg {
+      width: 100vw;
+      left: 0;
+      bottom: -5vw;
+    }
+    
+    .spanTS {
+      height: 2vw;
+    }
+    
+    .spanTS img {
+      width: 3vw;
+      margin: 0 1vw .5vw;
+    }
+    
+    .divText {
+      font-size: 2.2vw;
+      margin-top: 3vw;
+      margin-left: .5vw;
+      width: 75%;
+    }
+    
+    .spanText {
+      line-height: 2.8vw;
+    }
+    
+    .divButtons {
+      height: 100vh;
+      padding: 5vw 0;
+    }
+    
+    .buttonNext {
+      bottom: 5vw;
+    }
+    
+    .arrow {
+      width: 5vw;
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) {
+  
+  .pokeLogo {
+    width: 100vw;
+    transform: translateX(20%);
+    top: -15vw;
+  }
+  
+  .containerInfo {
+    max-height: 90vw;
+    position: relative;
+    top: -5vw;
+  }
+  
+  .containerDivInfo {
+    bottom: 0;
+  }
+  
+  .pokemonInfo {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 5vw;
+  }
+  
+  .pokeNumber {
+    margin: 0;
+    font-size: 30vw;
+  }
+  
+  .pokemonTitle {
+    font-size: 12vw;
+    bottom: 20.5vw;
+  }
+  
+  .containerStats {
+    bottom: 20vw;
+    width: 76vw;
+  }
+  
+  .divStatBar {
+    margin-top: 2vw;
+  }
+  
+  .stat {
+    font-size: 2.5vw;
+    margin-left: 1vw;
+  }
+  
+  progress[value] {
+    height: 2vw;
+  }
+  
+  .divStats {
+    margin-top: 4vw;
+    font-size: 2.2vw;
+  }
+  
+  .spanStat {
+    margin-top: 1.5vw; 
+  }
+  
+  strong {
+    margin-right: 1.5vw;
+  }
+  
+  .pokemonInfoImg {
+    width: 100vw;
+    left: 0;
+    bottom: -5vw;
+  }
+  
+  .spanTS {
+    height: 2vw;
+  }
+  
+  .spanTS img {
+    width: 3vw;
+    margin: 0 1vw .5vw;
+  }
+  
+  .divText {
+    font-size: 2.2vw;
+    margin-top: 3vw;
+    margin-left: .5vw;
+    width: 75%;
+  }
+  
+  .spanText {
+    line-height: 2.8vw;
+  }
+  
+  .divButtons {
+    height: 100vh;
+    padding: 5vw 0;
+  }
+  
+  .buttonNext {
+    bottom: 5vw;
+  }
+  
+  .arrow {
+    width: 5vw;
+  }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 850px) 
+and (min-device-width: 480px){
+  .containerInfo {
+    scale: .8;
+    position: relative;
+    left: -1vw;
+  }
+}
