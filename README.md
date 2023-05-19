@@ -31,7 +31,7 @@ A continuación proporcionaré el link a la PokeAPI con la cual se realizó este
 
 ## Link al proyecto
 
-Si te gustaría visitar mi proyecto lo puedes hacer en el siguiente link: https://lnkd.in/d3jVFpSt
+Si te interesa vivitar mi proyecto lo puedes hacer en el siguiente link: https://lnkd.in/d3jVFpSt
 
 ## 📩 Contacto
 
