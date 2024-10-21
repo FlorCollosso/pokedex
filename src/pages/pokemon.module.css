@@ -536,7 +536,7 @@ strong {
   .containerInfo {
     max-height: 90vw;
     position: relative;
-    top: -5vw;
+    top: -6vw;
   }
   
   .containerDivInfo {
@@ -745,112 +745,4 @@ strong {
     padding: 0;
   }
 }
-/* From 481px to 850px (Larger devices in landscape) */
-@media (min-width: 481px) and (max-width: 900px) and (min-height: 350px) and (max-height: 599px) {
-  .pokeLogo {
-    width: 50%;
-    transform: translateX(20%);
-    top: -15vw;
-  }
-  
-  .containerInfo {
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-    top: -4vh;
-  }
-  
-  .containerDivInfo {
-    bottom: 0;
-  }
-  
-  .pokemonInfo {
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-    padding: 4vw;
-  }
-  
-  .pokeNumber {
-    margin: 0;
-    font-size: 12vw;
-  }
-  
-  .pokemonTitle {
-    font-size: 5vw;
-    bottom: 8.5vw;
-  }
-  
-  .containerStats {
-    bottom: 8.5vw;
-    width: 29vw;
-  }
-  
-  .divStatBar {
-    margin-top: .4vw;
-  }
-  
-  .stat {
-    font-size: 1vw;
-    margin-left: .5vw;
-  }
-  
-  progress[value] {
-    height: .8vw;
-  }
-  
-  .divStats {
-    margin-top: 1.5vw;
-    font-size: 1vw;
-  }
-  
-  .spanStat {
-    margin-top: .1vw; 
-  }
-  
-  strong {
-    margin-right: 1vw;
-  }
-  
-  .pokemonInfoImg {
-    width: 100%;
-    left: -20%;
-    bottom: 0vw;
-  }
-  
-  .spanTS {
-    height: 1.5vw;
-  }
-  
-  .spanTS img {
-    width: 1.2vw;
-    margin: .5vw;
-  }
-  
-  .divText {
-    font-size: 1vw;
-    margin-top: 1.5vw;
-    margin-left: .5vw;
-    width: 75%;
-  }
-  
-  .spanText {
-    line-height: 1.5vw;
-  }
-  
-  .buttonNext {
-    bottom: 3vw;
-  }
-  
-  .arrow {
-    width: 2vw;
-  }
 
-  .divButtons {
-    height: 100vh;
-    left: 50%;
-    z-index: 2;
-    padding: 3vw;
-  }
-}
