@@ -27,11 +27,11 @@ Este es un proyecto de una Pokédex desarrollada en React, que utiliza la PokeAP
 
 ## ➕ Recursos adicionales
 
-A continuación proporcionaré el link a la PokeAPI con la cual se realizó este proyecto: https://pokeapi.co
+El siguiente es el link a la PokeAPI con la cual se realizó este proyecto: https://pokeapi.co
 
 ## 🔗 Link al proyecto
 
-Si te interesa vivitar mi proyecto lo puedes hacer en el siguiente link: https://lnkd.in/d3jVFpSt
+Para ver el proyecto en funcionamiento [hace click acá](https://pokedex.crafting-things.com/pokemons)
 
 ## 📩 Contacto
 
