@@ -1,7 +1,7 @@
 .nav {
   padding: 7vw 2vw 1vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
 }
 
@@ -83,12 +83,41 @@
 
 /* Responsive */
 
+/* From 992px to 1199px (Tablets in landscape orientation or larger screen) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .containerImg {
+    height: 55%;
+    padding: 4vw 1.5vw .5vw;
+  }
+
+  .imgPokemon {
+    width: 7vw;
+    max-height: 5vw;
+  }
+  
+  .listItemText {
+    padding: 1.3vw 1.5vw .5vw;
+    font-size: .85vw;
+  }
+  
+  .listItemText > :first-child {
+    font-size: 1.4vw;
+  }
+
+  .listItemText > :last-child {
+    margin-top: .4vw;
+  }
+
+  .listItemIcon {
+    width: 1.4vw;
+  }
+}
 
 /* From 768px to 991px (Tablets in portrait orientation) */
 @media (min-width: 768px) and (max-width: 991px) {
   .nav {
     padding: 8vw 3vw 1vw;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .listItem {
@@ -125,43 +154,13 @@
   }
 }
 
-/* From 992px to 1199px (Tablets in landscape orientation or larger screen) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  .containerImg {
-    height: 55%;
-    padding: 4vw 1.5vw .5vw;
-  }
-
-  .imgPokemon {
-    width: 7vw;
-    max-height: 5vw;
-  }
-  
-  .listItemText {
-    padding: 1.3vw 1.5vw .5vw;
-    font-size: .85vw;
-  }
-  
-  .listItemText > :first-child {
-    font-size: 1.4vw;
-  }
-
-  .listItemText > :last-child {
-    margin-top: .4vw;
-  }
-
-  .listItemIcon {
-    width: 1.4vw;
-  }
-}
-
 /* For Mobile Portrait View */
 
 /* From 481px to 767px (Larger devices like iPhone 6/7/8 Plus) */
 @media (min-width: 481px) and (max-width: 767px) {
   .nav {
     padding: 13vw 3vw 1vw;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .listItem {
@@ -202,7 +201,7 @@
 @media (max-width: 480px) { 
   .nav {
     padding: 12vw 3vw 1vw;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .listItem {

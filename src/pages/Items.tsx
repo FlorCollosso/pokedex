@@ -7,7 +7,6 @@ const Items = () => {
         <body>
             <Nav />
             <div className={styles.div}>
-                <img className={styles.gif} src={comingSoon} alt="Coming Soon" />
             </div>
         </body>
     

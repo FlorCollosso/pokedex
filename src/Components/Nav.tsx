@@ -24,37 +24,38 @@ const Nav = () => {
         navigate(`/pokemons/${pokemon.id}`);
     };
 
-
     return (
         <nav role="navigation" className={styles.nav}>
-            <button className={styles.pokeballButton} onClick={() => navigate('/pokemons')}>
-              <img className={styles.pokeballImg} src={pokeballSrc} alt="pokeball" />
-              <span>Go back</span> 
-            </button>
-
-            <button className={styles.random} onClick={fetchRandomPokemon}>
-                <img src={random} alt="Random" />
-            </button>
-
-            <div className={styles.menuToggle}>
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul className={styles.menu}>
-                <Link to="/items" className={styles.navLink}>
-                    <img className={styles.iconMenu} src={Pokeball} alt="Pokeball" />
-                    Items
-                </Link>
-                <Link to="/pokemons" className={styles.navLink}>
-                    <img className={styles.iconMenu} src={Pikachu} alt="Pickachu" />
-                    Pokemons
-                </Link>
-                <Link to="/map" className={styles.navLink}>
-                    <img className={styles.iconMenu} src={Pointer} alt="Pointer" />
-                    Map
-                </Link>
-                </ul>
+            <div className={styles.navContainer}>
+                <button className={styles.pokeballButton} onClick={() => navigate('/pokemons')}>
+                    <img className={styles.pokeballImg} src={pokeballSrc} alt="pokeball" />
+                    <span>Go back</span> 
+                </button>
+                <div className={styles.navRight}>
+                    <button className={styles.random} onClick={fetchRandomPokemon}>
+                        <img src={random} alt="Random" />
+                    </button>
+                    <div className={styles.menuToggle}>
+                        <input type="checkbox" />
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <ul className={styles.menu}>
+                        <Link to="/items" className={styles.navLink}>
+                            <img className={styles.iconMenu} src={Pokeball} alt="Pokeball" />
+                            Items
+                        </Link>
+                        <Link to="/pokemons" className={styles.navLink}>
+                            <img className={styles.iconMenu} src={Pikachu} alt="Pickachu" />
+                            Pokemons
+                        </Link>
+                        <Link to="/map" className={styles.navLink}>
+                            <img className={styles.iconMenu} src={Pointer} alt="Pointer" />
+                            Map
+                        </Link>
+                        </ul>
+                    </div>
+                </div>
             </div>
       </nav>
     )

@@ -6,7 +6,7 @@ import { Items, Pokemon, Pokemons, Map } from './pages';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <Routes>
           <Route path="/pokemons/:id" element={<Pokemon/>}/>
           <Route path="/pokemons" element={<Pokemons/>}/>
