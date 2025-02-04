@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 6vw;
+  padding: 0 6vw;
 }
 
 .mainContainer {
@@ -49,8 +49,8 @@
 }
 
 .pokeNumber, .pokeNumberMobile {
-  position: absolute;
-  top: -10vw;
+  position: relative;
+  top: -2vw;
   font-family: 'Archivo Black', sans-serif;
   font-size: 14vw;
   font-weight: 900;
@@ -58,8 +58,8 @@
 }
 
 .pokemonTitle, .pokemonTitleMobile {
-  position: relative;
-  top: 0;
+  position: absolute;
+  top: 10vw;
   font-size: 5vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -68,7 +68,7 @@
 
 .statsInfo {
   position: relative;
-  top: 1vw;
+  top: -2vw;
   display: flex;
   justify-content: space-between;
 }
@@ -85,7 +85,7 @@
 }
 
 .divStatBar {
-  margin-top: 18px;
+  margin-top: 10px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -100,13 +100,13 @@
   min-width: 100px;
   display: flex;
   text-align: right;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 200;
 }
 
 .pts {
   min-width: 100px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-left: 20px;
 }
 
@@ -144,7 +144,7 @@ progress[value]::-webkit-progress-value {
   white-space: nowrap;
   text-align: center;
   height: fit-content;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding: 20px 50px;
 }
 
@@ -176,6 +176,8 @@ progress[value]::-webkit-progress-value {
 
 .containerRight {
   display: flex;
+  height: 100%;
+  padding: 10px 0;
   position: relative;
   flex-direction: column;
   align-items: center;
@@ -212,7 +214,7 @@ progress[value]::-webkit-progress-value {
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .divText {
@@ -223,7 +225,7 @@ progress[value]::-webkit-progress-value {
   text-align: left;
   width: 100%;
   min-height: 4vw;
-  padding: 15px 35px;
+  padding: 10px 30px;
   background-color: aliceblue;
   clip-path: polygon(0% 0%, calc(100% - 20px) 0, 100% 20px, 100% 100%, 95% 100%, calc(0% + 20px) 100%, 0% calc(100% - 20px), 0% calc(100% + 20px));
   border-top: 1px solid #f44336;
@@ -234,15 +236,15 @@ progress[value]::-webkit-progress-value {
   display: flex;
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);
   background-color: #f44336;
-  padding: 10px 30px 10px 20px;
+  padding: 8px 28px 8px 18px;
   color: white;
   width: fit-content;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 800;
 }
 
 .spanText {
-  font-size: .9vw;
+  font-size: 1vw;
   line-height: 1.4vw;
   z-index: 2;
   padding-bottom: 10px;
@@ -251,38 +253,45 @@ progress[value]::-webkit-progress-value {
 .divButtons {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: fixed;
   width: 100%;
   left: 0;
   top: 50%;
   z-index: 2;
-  padding: 0 5vw;
 }
 
 .buttonNext {
   transform: rotate(-90deg);
   background: none;
   border: none;
-  opacity: .2;
+  border-radius: 10px 10px 0 0;
+  padding: 15px 10px 25px 10px;
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  background-color: #f44336;
 }
 
 .buttonPrev {
   transform: rotate(90deg);
   background: none;
   border: none;
-  opacity: .2;
+  padding: 15px 10px 25px 10px;
+  border-radius: 10px 10px 0 0;
   cursor: pointer;
+  position: absolute;
+  left: 0;
+  background-color: #f44336;
 }
 
 .buttonPrev:hover, .buttonNext:hover {
-  opacity: 1;
-  transition: all 300ms ease-in-out;
+  scale: 105%;
+  transition: all 100ms ease-in-out;
 }
 
 .arrow {
-  width: 3vw;
+  width: 2vw;
 }
 
 /* Color by Type */
@@ -389,18 +398,18 @@ progress[value]::-webkit-progress-value {
   }
   
   .pokeNumber {
-    top: -9vw;
+    top: 0vw;
     margin: 0;
     font-size: 14vw;
   }
   
   .pokemonTitle {
-    top: 3vw;
+    top: 11vw;
     font-size: 4vw;
   }
 
   .statsInfo {
-    top: 4vw;
+    top: -2vw;
   }
   
   .containerStats {
@@ -516,7 +525,6 @@ progress[value]::-webkit-progress-value {
     width: 100%;
     left: 0;
     top: 50%;
-    padding: 0 3vw;
   }
   
   .buttonPrev:hover, .buttonNext:hover {
@@ -529,13 +537,13 @@ progress[value]::-webkit-progress-value {
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 767px) and (max-width: 991px) {
   .main {
-    padding: 0 50px;
+    padding: 80px 100px;
   }
   
   .mainContainer {
-    max-width: 850px;
+    max-width: 800px;
     height: 100%;
   }
   
@@ -544,7 +552,7 @@ progress[value]::-webkit-progress-value {
   }
   
   .pokemon {
-    min-width: 700px;
+    min-width: 600px;
   }
   
   .containerLeft {
@@ -556,18 +564,14 @@ progress[value]::-webkit-progress-value {
   }
   
   .pokeNumber {
-    top: -8vw;
+    
     margin: 0;
     font-size: 14vw;
   }
   
   .pokemonTitle {
-    top: 4vw;
+    
     font-size: 4vw;
-  }
-
-  .statsInfo {
-    top: 5vw;
   }
   
   .containerStats {
@@ -683,7 +687,6 @@ progress[value]::-webkit-progress-value {
     width: 100%;
     left: 0;
     top: 50%;
-    padding: 0 20px;
   }
   
   .buttonPrev:hover, .buttonNext:hover {
@@ -696,7 +699,7 @@ progress[value]::-webkit-progress-value {
   } 
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 766px) {
   .mainContainer {
     max-width: 700px;
     height: 100%;
@@ -876,19 +879,19 @@ progress[value]::-webkit-progress-value {
     position: relative;
     left: 0;
     bottom: 0;
-    padding: 5vw;
   }
-  
+
   .buttonNext {
-    margin-left: 20px;
+    right: -6vw;
   }
   
   .buttonPrev {
-    margin-right: 20px;
+    left: -6vw;
+   
   }
   
   .arrow {
-    width: 8vw;
+    width: 5vw;
   }
 }
 
@@ -1071,19 +1074,19 @@ progress[value]::-webkit-progress-value {
     position: relative;
     left: 0;
     bottom: 0;
-    padding: 5vw;
   }
-  
+
   .buttonNext {
-    margin-left: 20px;
+    right: -5vw;
   }
   
   .buttonPrev {
-    margin-right: 20px;
+    left: -5vw;
+   
   }
   
   .arrow {
-    width: 8vw;
+    width: 6vw;
   }
 }
 
