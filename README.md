@@ -12,11 +12,9 @@ Este es un proyecto de una Pokédex desarrollada en React, que utiliza la PokeAP
 
 ## 📸 Capturas de pantalla
 
-![Captura de pantalla 1](https://github.com/FlorCollosso/pokedex/blob/master/src/assets/pokedex1.PNG)
+![Captura de pantalla 1](https://github.com/user-attachments/assets/0108252e-98da-4d3e-b9c2-63eeb168b5a8)
 
-![Captura de pantalla 2](https://github.com/FlorCollosso/pokedex/blob/master/src/assets/pokedex2.PNG)
-
-![Captura de pantalla 3](https://github.com/FlorCollosso/pokedex/blob/master/src/assets/pokedex3.PNG)
+![Captura de pantalla 2](https://github.com/user-attachments/assets/ae3f1ec1-2eed-4d8d-a5d4-4d3ea54c31b3)
 
 ## ⚙ Instalación
 
