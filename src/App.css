@@ -12,8 +12,10 @@
 :root {
   --bg-color: #fafafa;
   --bg-gradient: linear-gradient(105deg, rgb(41, 42, 44) 0%, rgb(34, 30, 45) 100%);
-  --bg-contrast: #1C2234;
-  --bg-light: #DFDDDD;
+  --bg-contrast: #151618;
+  --bg-secondary: #181f2c;
+  --bg-light: #d4d4d4;
+  --accent-color: #f44336;
 }
 
 html, .app, #root {
@@ -24,10 +26,7 @@ body {
   font-family: 'Segoe UI', 'Open Sans', sans-serif;
   height: 100%;
   overflow-x: hidden;
-  background-image: url(assets/background.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(../src/assets/background-map.jpg) no-repeat center/cover fixed;
 }
 
 /* ancho y altura de la scrollbar */

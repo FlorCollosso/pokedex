@@ -30,7 +30,7 @@ import water from "../assets/water.png";
 interface TypeImages {
     [type: string]: string;
 }
-  
+
 const typeImages: TypeImages = {
     Water: water,
     Fire: fire,
@@ -60,18 +60,18 @@ const Pokemons = () => {
 
     useEffect(() => {
         const fetchAllPokemons = async () => {
-          setIsLoading(true);
-          await waitFor(2000);
-          const allPokemons = await fetchPokemons();
-          setPokemons(allPokemons);
-          setIsLoading(false);
+            setIsLoading(true);
+            await waitFor(2000);
+            const allPokemons = await fetchPokemons();
+            setPokemons(allPokemons);
+            setIsLoading(false);
         };
         fetchAllPokemons();
-      }, []);
+    }, []);
 
     if (isLoading || !pokemons) {
         return <LoadingScreen />;
-    }   
+    }
 
     const filteredPokemons = pokemons.slice(0, 649).filter((pokemon) => {
         if (query) {
@@ -81,48 +81,49 @@ const Pokemons = () => {
     });
 
     return <>
-    <Header query={query} setQuery={setQuery} type={type} setType={setType}/>
-    <main>
-        <nav className={styles.nav}>
-            {filteredPokemons?.slice(0, 649).map((pokemon) =>(
-            <Link 
-            key={pokemon.id}
-            className={styles.listItem}
-            to={`/pokemons/${pokemon.id}`}
-            >
-                <div className={styles.containerImg}>
-                    <img
-                        className={styles.imgPokemon}
-                        src={pokemon.imgSrc}
-                        alt={pokemon.name}
-                    />
-                    <span>{pokemon.id}</span>
-                </div>
+        <Header query={query} setQuery={setQuery} type={type} setType={setType} />
+        <main>
+            <nav className={styles.nav}>
+                {filteredPokemons?.slice(0, 649).map((pokemon) => (
+                    <Link
+                        key={pokemon.id}
+                        className={styles.listItem}
+                        to={`/pokemons/${pokemon.id}`}
+                    >
+                        <div className={`${styles.containerImg} ${styles[pokemon.type]}`}>
+                            <div className={styles.backgroundImg}>
+                                <img
+                                    className={styles.imgPokemon}
+                                    src={pokemon.imgSrc}
+                                    alt={pokemon.name}
+                                />
+                                <span>#{pokemon.id}</span>
+                            </div>
 
-                <div className={styles.listItemText}>
-                    <span>{pokemon.name}</span>
-                    <span>Total: {pokemon.total}</span>
-                    <div className={styles.pokemonTypes}>
-                        <span>Types: {pokemon.types}</span>
-                        <div>
-                        <img
-                            className={styles.listItemIcon}
-                            src={typeImages[pokemon.type]}
-                            alt={pokemon.type}
-                        />
-                        {typeImages[pokemon.typeSec] && 
-                        <img 
-                        className={styles.listItemIcon} 
-                        src={typeImages[pokemon.typeSec]} 
-                        alt={pokemon.typeSec} 
-                        />}
+                            <div className={styles.listItemText}>
+                                <div className={styles.listItemTextInner}>
+                                    <span className={styles.nameSpan}>{pokemon.name}</span>
+                                    <div className={styles.typesContainer}>
+                                        <img
+                                            className={styles.listItemIcon}
+                                            src={typeImages[pokemon.type]}
+                                            alt={pokemon.type}
+                                        />
+                                        {typeImages[pokemon.typeSec] &&
+                                            <img
+                                                className={styles.listItemIcon}
+                                                src={typeImages[pokemon.typeSec]}
+                                                alt={pokemon.typeSec}
+                                            />}
+                                    </div>
+                                </div>
+                                <span className={styles.totalSpan}>Total: {pokemon.total}</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </Link>
-            ))}
-        </nav>
-    </main>
+                    </Link>
+                ))}
+            </nav>
+        </main>
     </>
 };
 

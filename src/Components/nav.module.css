@@ -173,6 +173,11 @@
     font-size: 1.5vw;
   }
 
+  .navContainer {
+    max-width: 90vw;
+    padding: 30px 0;
+  }
+
   .pokeballButton {
     font-size: 1rem;
   }
@@ -206,6 +211,11 @@
   .navLink {
     font-size: 1.8vw;
     font-weight: 400;
+  }
+
+  .navContainer {
+    max-width: 90vw;
+    padding: 30px 0;
   }
 
   .iconMenu {

@@ -1,71 +1,118 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 140px;
+}
+
 .nav {
-  padding: 7vw 2vw 1vw;
+  padding: auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin: 0 20px;
   grid-template-rows: 1fr;
+  max-width: 1600px;
 }
 
 .listItem {
   display: flex;
+  min-width: 280px;
+  max-width: 280px;
   flex-direction: column;
-  margin: 1vw;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
 }
 
 .containerImg {
-  border-radius: 3vw 3vw 0 0;
-  background: var(--bg-color);
-  height: 50%;
-  padding: 4vw 1vw .5vw;
+  border-radius: 12px;
+  position: relative;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  clip-path: polygon(100% 0, 100% 80%, 80% 100%, 0 100%, 0 0);
+}
+
+.backgroundImg {
+  width: 100%;
+  height: 150px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items:flex-end;
-  justify-content:flex-end;
-  font-size: 1.5vw;
-  font-weight: 800;
-  color: #df9cb772;
+  justify-content: space-between;
+  border-right: 1px solid #ffffff48;
+  border-top: 1px solid #ffffff48;
+  align-items: center;
+  background: url('../assets/background.jpg') no-repeat center center/cover;
+  border-radius: 12px;
+  top: 0;
+  left: 0;
+}
+
+.backgroundImg span {
+  width: 100%;
+  text-align: right;
+  padding: 0 15px 10px 0;
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: 16px;
+  opacity: 0.8;
 }
 
 .imgPokemon {
-  width: 8vw;
-  max-height: 6vw;
-  position: relative;
-  right: 50%;
-  transform: translateX(50%);
+  width: auto;
+  max-height: 90px;
+  min-height: 50px;
   object-fit: contain;
+  position: relative;
+  top: 50px;
 }
 
 .listItemText {
-  padding: 1vw 1.5vw 0;
-  height: 45%;
-  background-color: var(--bg-contrast);
-  border-radius: 0 0 3vw 3vw;
+  padding-top: 10px;
   color: var(--bg-color);
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.listItemText > :first-child {
-  font-size: 1.7vw;
+.nameSpan {
+  font-size: 30px;
   display: block;
-  margin-bottom: .5vw;
+  margin-bottom: 2px;
   font-weight: bold;
 }
 
-.listItemText > :last-child {
-  margin-top: .5vw;
+.totalSpan {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .listItemIcon {
-  width: 1.5vw;
-  margin: 0 .2vw;
+  width: 25px;
+  margin: 0 5px;
   object-fit: contain;
 }
 
-.pokemonTypes {
+.listItemTextInner {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.typesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes gradient {
@@ -80,160 +127,387 @@
 	}
 }
 
+/* Color by Type */
+
+.Grass {
+  background: rgb(158,199,76);
+  background: linear-gradient(347deg, rgba(158,199,76,1) 0%, rgb(46, 112, 58) 100%);
+  border-left: 5px solid rgba(158,199,76,1);
+  border-bottom: 5px solid rgb(46, 112, 58);
+}
+.Fire {
+  background: rgb(238,129,48);
+  background: linear-gradient(347deg, rgba(238,129,48,1) 0%, rgba(181,53,9,1) 100%);
+  border-left: 5px solid rgba(238,129,48,1);
+  border-bottom: 5px solid rgba(181,53,9,1);
+}
+.Water {
+  background: rgb(99,144,240);
+  background: linear-gradient(347deg, rgb(107, 172, 222) 0%, rgb(53, 68, 176) 100%);
+  border-left: 5px solid rgb(107, 172, 222);
+  border-bottom: 5px solid rgb(53, 68, 176);
+}
+.Normal {
+  background: rgb(168,167,122);
+  background: linear-gradient(347deg, rgb(168, 156, 122) 0%, rgb(126, 86, 54) 100%);
+  border-left: 5px solid rgb(168, 156, 122);
+  border-bottom: 5px solid rgb(126, 86, 54);
+}
+.Electric {
+  background: rgb(247,208,44);
+  background: linear-gradient(347deg, rgb(210, 185, 87) 0%, rgb(218, 153, 79) 100%);
+  border-left: 5px solid rgb(210, 185, 87);
+  border-bottom: 5px solid rgb(218, 153, 79);
+}
+.Ice {
+  background: rgb(150,217,214);
+  background: linear-gradient(347deg, rgba(150,217,214,1) 0%, rgba(67,129,177,1) 100%);
+  border-left: 5px solid rgba(150,217,214,1);
+  border-bottom: 5px solid rgba(67,129,177,1);
+}
+.Fighting {
+  background: rgb(176,66,61);
+  background: linear-gradient(347deg, rgba(176,66,61,1) 0%, rgba(140,59,95,1) 100%);
+  border-left: 5px solid rgba(176,66,61,1);
+  border-bottom: 5px solid rgba(140,59,95,1);
+}
+.Poison {
+  background: rgb(163,62,161);
+  background: linear-gradient(347deg, rgba(163,62,161,1) 0%, rgba(112,43,167,1) 100%);
+  border-left: 5px solid rgba(163,62,161,1);
+  border-bottom: 5px solid rgba(112,43,167,1);
+}
+.Ground {
+  background: rgb(222,189,121);
+  background: linear-gradient(347deg, rgba(222,189,121,1) 0%, rgba(210,98,19,1) 100%);
+  border-left: 5px solid rgba(222,189,121,1);
+  border-bottom: 5px solid rgba(210,98,19,1);
+}
+.Flying {
+  background: rgb(169,143,243);
+  background: linear-gradient(347deg, rgba(169,143,243,1) 0%, rgba(155,59,204,1) 100%);
+  border-left: 5px solid rgba(169,143,243,1);
+  border-bottom: 5px solid rgba(155,59,204,1);
+}
+.Psychic {
+  background: rgb(227,135,163);
+  background: linear-gradient(347deg, rgba(227,135,163,1) 0%, rgba(218,56,105,1) 100%);
+  border-left: 5px solid rgba(227,135,163,1);
+  border-bottom: 5px solid rgba(218,56,105,1);
+}
+.Bug {
+  background: rgb(166,185,26);
+  background: linear-gradient(347deg, rgba(166,185,26,1) 0%, rgba(140,128,42,1) 100%);
+  border-left: 5px solid rgba(166,185,26,1);
+  border-bottom: 5px solid rgba(140,128,42,1);
+}
+.Rock {
+  background: rgb(154,147,111);
+  background: linear-gradient(347deg, rgba(154,147,111,1) 0%, rgba(86,93,55,1) 100%);
+  border-left: 5px solid rgba(154,147,111,1);
+  border-bottom: 5px solid rgba(86,93,55,1);
+}
+.Ghost {
+  background: rgb(115,87,151);
+  background: linear-gradient(347deg, rgba(115,87,151,1) 0%, rgba(57,56,126,1) 100%);
+  border-left: 5px solid rgba(115,87,151,1);
+  border-bottom: 5px solid rgba(57,56,126,1);
+}
+.Dragon {
+  background: rgb(232,85,71);
+  background: linear-gradient(347deg, rgba(232,85,71,1) 0%, rgba(179,59,98,1) 100%);
+  border-left: 5px solid rgba(232,85,71,1);
+  border-bottom: 5px solid rgba(179,59,98,1) ;
+}
+.Dark {
+  background: rgb(136,76,68);
+  background: linear-gradient(347deg, rgb(127, 82, 113) 0%, rgb(83, 43, 83) 100%);
+  border-left: 5px solid rgb(127, 82, 113);
+  border-bottom: 5px solid rgb(83, 43, 83);
+}
+.Steel {
+  background: rgb(183,183,206);
+  background: linear-gradient(347deg, rgba(183,183,206,1) 0%, rgba(140,118,173,1) 100%);
+  border-left: 5px solid rgba(183,183,206,1);
+  border-bottom: 5px solid rgba(140,118,173,1);
+}
+.Fairy {
+  background: rgb(213,156,185);
+  background: linear-gradient(347deg, rgba(213,156,185,1) 0%, rgba(201,117,151,1) 100%);
+  border-left: 5px solid rgba(213,156,185,1);
+  border-bottom: 5px solid rgba(201,117,151,1);
+}
+
 
 /* Responsive */
 
-/* From 992px to 1199px (Tablets in landscape orientation or larger screen) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  .containerImg {
-    height: 55%;
-    padding: 4vw 1.5vw .5vw;
+/* From 1200px to 1399 */
+@media (min-width: 1200px) and (max-width: 1460px) {
+  main {
+    padding-top: 120px;
   }
 
+  .nav {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .listItem {
+    min-width: 210px;
+    max-width: 210px;
+  }
+  
+  .containerImg {
+    padding: 15px;
+  }
+  
+  .backgroundImg {
+    height: 120px;
+  }
+  
+  .backgroundImg span {
+    padding: 0 12px 8px 0;
+    font-size: 12px;
+  }
+  
   .imgPokemon {
-    width: 7vw;
-    max-height: 5vw;
+    max-height: 60px;
+    min-height: 40px;
+    top: 40px;
   }
   
   .listItemText {
-    padding: 1.3vw 1.5vw .5vw;
-    font-size: .85vw;
+    padding-top: 10px;
   }
   
-  .listItemText > :first-child {
-    font-size: 1.4vw;
+  .nameSpan {
+    font-size: 22px;
+    margin-bottom: 2px;
   }
-
-  .listItemText > :last-child {
-    margin-top: .4vw;
+  
+  .totalSpan {
+    font-size: 12px;
   }
-
+  
   .listItemIcon {
-    width: 1.4vw;
+    width: 18px;
+    margin: 0 4px;
   }
 }
 
-/* From 768px to 991px (Tablets in portrait orientation) */
-@media (min-width: 768px) and (max-width: 991px) {
+/* From 992px to 1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+  main {
+    padding-top: 120px;
+  }
+  
   .nav {
-    padding: 8vw 3vw 1vw;
     grid-template-columns: repeat(4, 1fr);
   }
 
   .listItem {
-    margin: 1vw;
+    min-width: 220px;
+    max-width: 220px;
+  }
+  
+  .containerImg {
+    padding: 15px;
+  }
+  
+  .backgroundImg {
+    height: 120px;
+  }
+  
+  .backgroundImg span {
+    padding: 0 12px 8px 0;
+    font-size: 12px;
+  }
+  
+  .imgPokemon {
+    max-height: 60px;
+    min-height: 40px;
+    top: 40px;
+  }
+  
+  .listItemText {
+    padding-top: 10px;
+  }
+  
+  .nameSpan {
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  
+  .totalSpan {
+    font-size: 12px;
+  }
+  
+  .listItemIcon {
+    width: 18px;
+    margin: 0 4px;
+  }
+}
+
+/* From 768px to 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  main {
+    padding-top: 110px;
+  }
+  
+  .nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .listItem {
+    min-width: 220px;
+    max-width: 220px;
+  }
+  
+  .containerImg {
+    padding: 15px;
+  }
+  
+  .backgroundImg {
+    height: 120px;
+  }
+  
+  .backgroundImg span {
+    padding: 0 12px 8px 0;
+    font-size: 12px;
+  }
+  
+  .imgPokemon {
+    max-height: 60px;
+    min-height: 40px;
+    top: 40px;
+  }
+  
+  .listItemText {
+    padding-top: 10px;
+  }
+  
+  .nameSpan {
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  
+  .totalSpan {
+    font-size: 12px;
+  }
+  
+  .listItemIcon {
+    width: 18px;
+    margin: 0 4px;
+  }
+}
+
+/* From 481px to 767px */
+@media (min-width: 569px) and (max-width: 767px) {
+  main {
+    padding-top: 110px;
+  }
+  
+  .nav {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .listItem {
+    min-width: 175px;
+    max-width: 175px;
+  }
+  
+  .containerImg {
+    padding: 10px;
+  }
+  
+  .backgroundImg {
+    height: 100px;
+    width: 150px;
+  }
+  
+  .backgroundImg span {
+    padding: 0 10px 6px 0;
+    font-size: 10px;
+  }
+  
+  .imgPokemon {
+    max-height: 40px;
+    min-height: 20px;
+    top: 35px;
+  }
+  
+  .listItemText {
+    padding-top: 5px;
+  }
+  
+  .nameSpan {
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+  
+  .totalSpan {
+    font-size: 10px;
+  }
+  
+  .listItemIcon {
+    width: 12px;
+    margin: 0 2px;
+  }
+}
+
+/* Up to 480px */
+@media (max-width: 569px) { 
+  main {
+    padding-top: 100px;
+  }
+  
+  .nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+    margin: 0 10px;
+  }
+  
+  .listItem {
+    min-width: 190px;
+    max-width: 190px;
   }
 
   .containerImg {
-    height: 100%;
-    padding: 3vw 1.5vw 1.5vw;
+    padding: 10px 10px;
   }
-
+  
+  .backgroundImg {
+    height: 20vw;
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .backgroundImg span {
+    padding: 0 10px 6px 0;
+    font-size: 10px;
+  }
+  
   .imgPokemon {
-    width: 9vw;
     max-height: 7vw;
+    min-height: 5vw;
+    top: 6vw;
   }
   
   .listItemText {
-    padding: 1.3vw 1.8vw;
-    font-size: 1vw;
-    height: 100%;
+    padding-top: 5px;
   }
   
-  .listItemText > :first-child {
-    font-size: 2vw;
+  .nameSpan {
+    font-size: 3.2vw;
+    margin-bottom: 2px;
   }
-
-  .listItemText > :last-child {
-    margin-top: .5vw;
+  
+  .totalSpan {
+    font-size: 12px;
   }
-
+  
   .listItemIcon {
-    width: 1.5vw;
-    margin: .3vw ;
-  }
-}
-
-/* For Mobile Portrait View */
-
-/* From 481px to 767px (Larger devices like iPhone 6/7/8 Plus) */
-@media (min-width: 481px) and (max-width: 767px) {
-  .nav {
-    padding: 13vw 3vw 1vw;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .listItem {
-    margin: 2vw;
-  }
-
-  .containerImg {
-    height: 100%;
-    padding: 5vw 1.5vw 1.5vw;
-  }
-
-  .imgPokemon {
-    width: 11vw;
-    max-height: 9vw;
-  }
-  
-  .listItemText {
-    padding: 1.5vw 1.8vw;
-    font-size: 1.5vw;
-    height: 100%;
-  }
-  
-  .listItemText > :first-child {
-    font-size: 2.3vw;
-  }
-
-  .listItemText > :last-child {
-    margin-top: .5vw;
-  }
-
-  .listItemIcon {
-    width: 2vw;
-    margin: .5vw ;
-  }
-}
-
-/* Up to 480px (Small devices like iPhone 5/SE) */
-@media (max-width: 480px) { 
-  .nav {
-    padding: 12vw 3vw 1vw;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .listItem {
-    margin: 2vw;
-  }
-
-  .containerImg {
-    height: 100%;
-    padding: 5vw 1.5vw 1.5vw;
-  }
-
-  .imgPokemon {
-    width: 11vw;
-    max-height: 9vw;
-  }
-  
-  .listItemText {
-    padding: 1.5vw 1.8vw;
-    font-size: 1.5vw;
-    height: 100%;
-  }
-  
-  .listItemText > :first-child {
-    font-size: 2.3vw;
-  }
-
-  .listItemText > :last-child {
-    margin-top: .5vw;
-  }
-
-  .listItemIcon {
-    width: 2vw;
-    margin: .5vw ;
+    width: 15px;
+    margin: 0 2px;
   }
 }

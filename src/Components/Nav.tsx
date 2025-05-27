@@ -12,7 +12,7 @@ import random from "../assets/random.png";
 import pokeballSrc from "../assets/pokeball.png";
 import { fetchRandom } from '../api/fetchRandom';
 
-const Nav = () => {
+const Nav = ({ showRandomButton = true }) => {
 
     const navigate = useNavigate();
 
@@ -29,35 +29,37 @@ const Nav = () => {
             <div className={styles.navContainer}>
                 <button className={styles.pokeballButton} onClick={() => navigate('/pokemons')}>
                     <img className={styles.pokeballImg} src={pokeballSrc} alt="pokeball" />
-                    <span>Go back</span> 
+                    <span>Go back</span>
                 </button>
                 <div className={styles.navRight}>
-                    <button className={styles.random} onClick={fetchRandomPokemon}>
-                        <img src={random} alt="Random" />
-                    </button>
+                    {showRandomButton && (
+                        <button className={styles.random} onClick={fetchRandomPokemon}>
+                            <img src={random} alt="Random" />
+                        </button>
+                    )}
                     <div className={styles.menuToggle}>
                         <input type="checkbox" />
                         <span></span>
                         <span></span>
                         <span></span>
                         <ul className={styles.menu}>
-                        <Link to="/items" className={styles.navLink}>
-                            <img className={styles.iconMenu} src={Pokeball} alt="Pokeball" />
-                            Items
-                        </Link>
-                        <Link to="/pokemons" className={styles.navLink}>
-                            <img className={styles.iconMenu} src={Pikachu} alt="Pickachu" />
-                            Pokemons
-                        </Link>
-                        <Link to="/map" className={styles.navLink}>
-                            <img className={styles.iconMenu} src={Pointer} alt="Pointer" />
-                            Map
-                        </Link>
+                            <Link to="/items" className={styles.navLink}>
+                                <img className={styles.iconMenu} src={Pokeball} alt="Pokeball" />
+                                Items
+                            </Link>
+                            <Link to="/pokemons" className={styles.navLink}>
+                                <img className={styles.iconMenu} src={Pikachu} alt="Pickachu" />
+                                Pokemons
+                            </Link>
+                            <Link to="/map" className={styles.navLink}>
+                                <img className={styles.iconMenu} src={Pointer} alt="Pointer" />
+                                Map
+                            </Link>
                         </ul>
                     </div>
                 </div>
             </div>
-      </nav>
+        </nav>
     )
 };
 

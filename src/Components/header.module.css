@@ -2,35 +2,51 @@
     position: fixed;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     font-weight: bold;
-    padding: .7vw 3.5vw;
+    padding: 5px 0;
     background: var(--bg-contrast);
     z-index: 2;
 }
 
+.headerContainer {
+    max-width: 1530px;
+    margin: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .containerInput {
+    position: relative;
     display: flex;
     align-items: center;
-    margin: 1vw 0;
+    margin: 20px 0;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    border-radius: 50% 0 0 50%;
+    width: 40px;
+    height: 40px;
 }
 
 .searchIcon {
-    width: 2.2vw;
-    height: 2.2vw;
-    padding: .35vw;
-    border-radius: 5vw 0 0 5vw;
-    background-color: #525D80;
+    width: 25px;
+    height: 25px;
 }
 
 .input {
     background-color: rgba(255, 255, 255, 0.918);
-    height: 2.2vw;
-    padding-left: .7vw;
-    border-radius: 0 5vw 5vw 0;
+    height: 40px;
+    padding-left: 15px;
+    border-radius: 0 50px 50px 0;
     border: none;
-    width: 30vw;
-    font-size: 1.8vh;
+    width: 450px;
+    font-size: 16px;
 }
 
 input:focus {
@@ -53,8 +69,8 @@ input:focus {
 }
 
 .iconMenu {
-    height: 1.8vw;
-    margin-left: 2vw;
+    height: 30px;
+    margin-left: 30px;
 }
 
 .iconMenu:hover {
@@ -63,11 +79,11 @@ input:focus {
 }
 
 .filter {
-    width: 1.2vw;
+    width: 25px;
 }
 
 .filterButton {
-    margin-left: 1.5vw;
+    margin-left: 30px;
     background: none;
     border: none;
     cursor: pointer;
@@ -75,18 +91,12 @@ input:focus {
     align-items: center;
 }
 
-.filterOverflow {
-    position: absolute;
-    top: 1.5vw;
-    left: 37vw;
-    overflow: hidden;
-    z-index: 2;
-}
-
 .filterConatiner {
-    position: relative;
-    top: -20vw;
-    border-radius: 0 2vw 2vw;
+    position: absolute;
+    width: auto;
+    top: 30vh;
+    left: 36%;
+    border-radius: 2vw;
     padding: 2vw;
     background-color: var(--bg-color);
     z-index: 2;
@@ -110,15 +120,31 @@ input:focus {
     margin-top: 1.5vw;
 }
 
-.filterDiv img {
+.filterDiv button {
     width: 3vw;
+    height: 3vw;
+    background: none;
+    border: none;
     cursor: pointer;
+    border-radius: 50%;
+    transition: all 300ms;
 }
 
-.filterDiv img:hover {
+.filterDiv button:hover {
     scale: 1.05;
     transition: all 300ms;
 }
+
+.filterDiv button:focus {
+    outline: 1px solid #55ec6f;
+    box-shadow: 0 0 10px 5px #4cd463af;
+}
+
+.filterDiv img {
+    width: 100%;
+    height: 100%;
+}
+
 
 .filterImg {
     width: 1.2vw;
@@ -139,7 +165,6 @@ input:focus {
     height: fit-content;
     fill: var(--bg-light);
     position: relative;
-    right: -5.7vw;
     transition: transform 0.5s ease;
 }
 
@@ -156,26 +181,31 @@ input:focus {
     align-items: center;
     justify-content: space-between;
 }
+.filterButtons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
-.filterTitleDiv button {
+.filterButtons button {
     background: none;
     border: none;
     cursor: pointer;
     transition: all 300ms;
 }
 
-.filterTitleDiv button:hover >  .closeImg {
+.filterButtons button:hover >  .closeImg {
     opacity: 1;
 }
 
-.filterTitleDiv button:hover >  .filterImg {
+.filterButtons button:hover >  .filterImg {
     opacity: 0;
 }
 
 .backgroundFilter {
     position: absolute;
     left: 0;
-    top:5.2vw;
+    top:0;
     width: 110vw;
     height: 100vh;
     background: #07011eca;
@@ -184,143 +214,455 @@ input:focus {
 
 
 /* Responsive */
+
+/* From 1200px to 1460px */
+@media (min-width: 1200px) and (max-width: 1460px) {
+    .header {
+        padding: 5px 0;
+    }
+    
+    .headerContainer {
+        max-width: 1150px;
+    }
+    
+    .containerInput {
+        margin: 18px 0;
+    }
+    
+    .searchContainer {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .searchIcon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .input {
+        height: 35px;
+        padding-left: 12px;
+        width: 420px;
+        font-size: 14px;
+    }
+    
+    .iconMenu {
+        height: 25px;
+        margin-left: 25px;
+    }
+    
+    .filter {
+        width: 20px;
+    }
+    
+    .filterButton {
+        margin-left: 25px;
+    }
+    
+    .filterConatiner {
+        top: 25vh;
+        left: 35%;
+        border-radius: 2vw;
+        padding: 2vw;
+        font-size: 22px;
+    }
+    
+    .filterConatiner hr {
+        margin: 1vw 0;
+    }
+    
+    .filterDiv {
+        grid-gap: 1.2vw;
+        margin-top: 1.5vw;
+    }
+    
+    .filterDiv button {
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    .filterDiv img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .filterImg {
+        width: 1.6vw;
+    }
+    
+    .closeImg {
+        width: 1.6vw;
+        left: 1.6vw;
+    }
+    
+    .cleanFilterImg {
+        width: 1.6vw;
+    }
+    
+    .backgroundFilter {
+        width: 110vw;
+        height: 100vh;
+    }
+}
   
-/* From 992px to 1199px (Tablets in landscape orientation or larger screen) */
+/* From 992px to 1199px */
 @media (min-width: 992px) and (max-width: 1199px) {
     .header {
-        padding: 1vw 4vw;
+        padding: 5px 0;
+    }
+    
+    .headerContainer {
+        max-width: 980px;
+    }
+    
+    .containerInput {
+        margin: 18px 0;
+    }
+    
+    .searchContainer {
+        width: 35px;
+        height: 35px;
     }
     
     .searchIcon {
-        width: 2.6vw;
-        height: 2.6vw;
-        padding: .3vw;
+        width: 20px;
+        height: 20px;
     }
     
     .input {
-        height: 2.6vw;
-        padding-left: 1vw;
-        width: 35vw;
-        font-size: 1.4vw;
+        height: 35px;
+        padding-left: 12px;
+        width: 420px;
+        font-size: 14px;
     }
-
+    
     .iconMenu {
-        height: 2.1vw;
-        margin-left: 2vw;
+        height: 25px;
+        margin-left: 25px;
     }
     
     .filter {
-        width: 1.8vw;
+        width: 20px;
     }
-
+    
     .filterButton {
-        margin-left: 1.8vw;
+        margin-left: 25px;
     }
-
+    
     .filterConatiner {
-        top: -20vw;
+        top: 25vh;
+        left: 35%;
+        border-radius: 2vw;
+        padding: 2vw;
+        font-size: 22px;
     }
-
-    .filterOverflow {
-        top: 2.1vw;
-        left: 43vw;
+    
+    .filterConatiner hr {
+        margin: 1vw 0;
     }
-
+    
+    .filterDiv {
+        grid-gap: 1.2vw;
+        margin-top: 1.5vw;
+    }
+    
+    .filterDiv button {
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    .filterDiv img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .filterImg {
+        width: 1.6vw;
+    }
+    
+    .closeImg {
+        width: 1.6vw;
+        left: 1.6vw;
+    }
+    
+    .cleanFilterImg {
+        width: 1.6vw;
+    }
+    
     .backgroundFilter {
-        top: 6.6vw;
+        width: 110vw;
+        height: 100vh;
+    }
+}
+
+/* From 768px to 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    .header {
+        padding: 5px 0;
+    }
+    
+    .headerContainer {
+        max-width: 700px;
+    }
+    
+    .containerInput {
+        margin: 18px 0;
+    }
+    
+    .searchContainer {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .searchIcon {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .input {
+        height: 25px;
+        padding-left: 12px;
+        width: 300px;
+        font-size: 12px;
+    }
+    
+    .iconMenu {
+        height: 20px;
+        margin-left: 20px;
+    }
+    
+    .filter {
+        width: 15px;
+    }
+    
+    .filterButton {
+        margin-left: 25px;
+    }
+    
+    .filterConatiner {
+        top: 25vh;
+        left: 28%;
+        border-radius: 2vw;
+        padding: 3vw;
+        font-size: 18px;
+    }
+    
+    .filterConatiner hr {
+        margin: 1.5vw 0;
+    }
+    
+    .filterDiv {
+        grid-gap: 1.5vw;
+        margin-top: 1.5vw;
+    }
+    
+    .filterDiv button {
+        width: 5vw;
+        height: 5vw;
+    }
+    
+    .filterDiv img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .filterImg {
+        width: 2vw;
+    }
+    
+    .closeImg {
+        width: 2vw;
+        left: 2vw;
+    }
+    
+    .cleanFilterImg {
+        width: 2vw;
+    }
+    
+    .backgroundFilter {
+        width: 110vw;
+        height: 100vh;
+    }
+}
+
+/* From 481px to 767px */
+@media (min-width: 569px) and (max-width: 767px) {
+    .header {
+        padding: 5px 0;
+    }
+    
+    .headerContainer {
+        max-width: 550px;
+    }
+    
+    .containerInput {
+        margin: 18px 0;
+    }
+    
+    .searchContainer {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .searchIcon {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .input {
+        height: 25px;
+        padding-left: 12px;
+        width: 300px;
+        font-size: 12px;
+    }
+    
+    .iconMenu {
+        height: 20px;
+        margin-left: 20px;
+    }
+    
+    .filter {
+        width: 15px;
+    }
+    
+    .filterButton {
+        margin-left: 25px;
+    }
+    
+    .filterConatiner {
+        top: 25vh;
+        left: 15%;
+        border-radius: 2vw;
+        padding: 3.5vw;
+        font-size: 20px;
+    }
+    
+    .filterConatiner hr {
+        margin: 2vw 0;
+    }
+    
+    .filterDiv {
+        grid-gap: 3vw;
+        margin-top: 3vw;
+    }
+    
+    .filterDiv button {
+        width: 8vw;
+        height: 8vw;
+    }
+    
+    .filterDiv img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .filterImg {
+        width: 3.5vw;
+    }
+    
+    .closeImg {
+        width: 3.5vw;
+        left: 3vw;
+    }
+    
+    .cleanFilterImg {
+        width: 3.5vw;
+    }
+    
+    .backgroundFilter {
+        width: 110vw;
+        height: 100vh;
     }
 }
   
-/* For Mobile Portrait View */
-  
-/* Up to 480px (Small devices like iPhone 5/SE) */
-@media (max-width: 480px) { 
+/* Up to 480px */
+@media (max-width: 568px) { 
     .header {
-        padding: 2vw 5vw;
+        padding: 5px 0;
     }
-
+    
+    .headerContainer {
+        max-width: 400px;
+    }
+    
+    .containerInput {
+        margin: 18px 0;
+    }
+    
+    .searchContainer {
+        width: 25px;
+        height: 25px;
+    }
+    
     .searchIcon {
-        width: 5vw;
-        height: 5vw;
-        padding: .7vw;
+        width: 12px;
+        height: 12px;
     }
     
     .input {
-        height: 5vw;
-        padding-left: 1.8vw;
-        width: 40vw;
-        font-size: 2.3vw;
+        height: 25px;
+        padding-left: 8px;
+        width: 200px;
+        font-size: 12px;
     }
-
+    
     .iconMenu {
-        height: 3.5vw;
-        margin-left: 3vw;
+        height: 20px;
+        margin-left: 20px;
     }
     
     .filter {
-        width: 3vw;
+        width: 15px;
     }
-
+    
     .filterButton {
-        margin-left: 2vw;
+        margin-left: 18px;
     }
-
+    
     .filterConatiner {
-        top: -20vw;
+        top: 25vh;
+        left: 9%;
+        border-radius: 2vw;
+        padding: 5vw;
+        font-size: 20px;
     }
-
-    .filterOverflow {
-        top: 3vw;
-        left: 52vw;
+    
+    .filterConatiner hr {
+        margin: 2.5vw 0;
     }
-
-    .backgroundFilter {
-        top: 10.85vw;
+    
+    .filterDiv {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 3vw;
+        margin-top: 3.5vw;
     }
-}
-  
-/* From 481px to 767px (Larger devices like iPhone 6/7/8 Plus) */
-@media (min-width: 481px) and (max-width: 767px) {
-    .header {
-        padding: 2vw 5vw;
+    
+    .filterDiv button {
+        width: 12vw;
+        height: 12vw;
     }
-
-    .searchIcon {
+    
+    .filterDiv img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .filterImg {
         width: 5vw;
-        height: 5vw;
-        padding: .7vw;
     }
     
-    .input {
-        height: 5vw;
-        padding-left: 1.8vw;
-        width: 40vw;
-        font-size: 2.3vw;
-    }
-
-    .iconMenu {
-        height: 3.5vw;
-        margin-left: 3vw;
+    .closeImg {
+        width: 5vw;
+        left: 5vw;
     }
     
-    .filter {
-        width: 3vw;
+    .cleanFilterImg {
+        width: 5vw;
     }
-
-    .filterButton {
-        margin-left: 2vw;
-    }
-
-    .filterConatiner {
-        top: -20vw;
-    }
-
-    .filterOverflow {
-        top: 3vw;
-        left: 52vw;
-    }
-
+    
     .backgroundFilter {
-        top: 10.85vw;
+        width: 110vw;
+        height: 100vh;
     }
 }

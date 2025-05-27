@@ -228,14 +228,14 @@ progress[value]::-webkit-progress-value {
   padding: 10px 30px;
   background-color: aliceblue;
   clip-path: polygon(0% 0%, calc(100% - 20px) 0, 100% 20px, 100% 100%, 95% 100%, calc(0% + 20px) 100%, 0% calc(100% - 20px), 0% calc(100% + 20px));
-  border-top: 1px solid #f44336;
-  border-left: 20px solid #f44336;
+  border-top: 1px solid var(--accent-color);
+  border-left: 20px solid var(--accent-color);
 }
 
 .spanAbout {
   display: flex;
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);
-  background-color: #f44336;
+  background-color: var(--accent-color);
   padding: 8px 28px 8px 18px;
   color: white;
   width: fit-content;
@@ -270,7 +270,7 @@ progress[value]::-webkit-progress-value {
   cursor: pointer;
   position: absolute;
   right: 0;
-  background-color: #f44336;
+  background-color: var(--accent-color);
 }
 
 .buttonPrev {
@@ -282,7 +282,7 @@ progress[value]::-webkit-progress-value {
   cursor: pointer;
   position: absolute;
   left: 0;
-  background-color: #f44336;
+  background-color: var(--accent-color);
 }
 
 .buttonPrev:hover, .buttonNext:hover {
@@ -461,7 +461,7 @@ progress[value]::-webkit-progress-value {
   }
   
   .divStat {
-    padding: 0 30px;
+    padding: 0 15px;
   }
   
   .divStats > :first-child {
@@ -494,7 +494,7 @@ progress[value]::-webkit-progress-value {
   
   .spanTS img {
     width: 2.5vw;
-    margin: 0 20px;
+    margin: 0 10px;
   }
   
   .divAbout {
@@ -540,6 +540,7 @@ progress[value]::-webkit-progress-value {
 @media (min-width: 767px) and (max-width: 991px) {
   .main {
     padding: 80px 100px;
+    min-height: 100vh;
   }
   
   .mainContainer {
@@ -552,7 +553,7 @@ progress[value]::-webkit-progress-value {
   }
   
   .pokemon {
-    min-width: 600px;
+    min-width: 650px;
   }
   
   .containerLeft {
@@ -623,7 +624,7 @@ progress[value]::-webkit-progress-value {
   }
   
   .divStat {
-    padding: 0 25px;
+    padding: 0 15px;
   }
   
   .divStats > :first-child {
@@ -647,7 +648,7 @@ progress[value]::-webkit-progress-value {
   }
   
   .pokemonInfoImg {
-    width: 30vw;
+    width: 38vw;
   }
   
   .spanTS {
@@ -656,7 +657,7 @@ progress[value]::-webkit-progress-value {
   
   .spanTS img {
     width: 2.5vw;
-    margin: 0 20px;
+    margin: 0 12px;
   }
   
   .divAbout {
@@ -676,11 +677,11 @@ progress[value]::-webkit-progress-value {
   }
   
   .containerStatsText {
-    margin-top: 30px;
+    margin-top: 25px;
   }
   
   .divText {
-    padding: 10px 20px;
+    padding: 8px 20px;
   }
   
   .divButtons {
@@ -700,6 +701,8 @@ progress[value]::-webkit-progress-value {
 }
 
 @media (min-width: 481px) and (max-width: 766px) {
+
+  
   .mainContainer {
     max-width: 700px;
     height: 100%;
@@ -892,6 +895,201 @@ progress[value]::-webkit-progress-value {
   
   .arrow {
     width: 5vw;
+  }
+}
+
+@media (min-width: 569px) and (max-width: 767px) {
+  .mainContainer {
+    max-width: 90vw;
+    height: 100%;
+  }
+
+  .pokemon {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+  }
+
+  .pokeLogo {
+    height: 80vw;
+    right: 0;
+    transform: translateX(50%);
+    top: 0;
+  }
+  
+  .pokeNumber {
+    display: none;
+  }
+
+  .pokeNumberMobile {
+    position: relative;
+    top: 0;
+    font-size: 18vw;
+  }
+
+  .divImgMobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .pokemonImgMobile {
+    position: absolute;
+    top: 1vw;
+    right: 0;
+    width: 40%;
+    filter: drop-shadow(10px 2px 10px rgba(0, 0, 0, 0.1));
+  }
+
+  .divTitleMobile {
+    width: 60%;
+    position: relative;
+    top: 6vw;
+  }
+  
+  .pokemonTitle {
+    display: none;
+  }
+
+  .pokemonTitleMobile {
+    position: relative;
+    font-size: 6vw;
+    top: -8.5vw;
+  }
+  
+  .statsInfo {
+    top: 0;
+  }
+  
+  .containerStats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .divStatsBars {
+    width: 100%;
+  }
+  
+  .divStatBar {
+    margin-top: 8px;
+    width: 100%;
+    gap: 0;
+  }
+  
+  .stat {
+    min-width: 70px;
+    font-size: 1rem;
+  }
+  
+  .pts {
+    min-width: 70px;
+    font-size: 1rem;
+    margin-left: 20px;
+  }
+  
+  progress[value] {
+    margin-left: 0;
+    height: 10px;
+  }
+  
+  .divStats {
+    font-size: 1rem;
+    padding: 20px 50px;
+  }
+  
+  .divStat {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+  }
+  
+  .divStats > :first-child {
+    width: 70%;
+  }
+  
+  .divStats > :nth-child(2) {
+    width: 100%;
+  }
+  
+  .divStats > :nth-child(3) {
+    width: 70%;
+  }
+  
+  .spanStat {
+    margin-top: 5px; 
+  }
+  
+  .containerRight {
+    right: 0;
+    top: -1vw;
+  }
+  
+  .pokemonInfoImg {
+    display: none;
+  }
+  
+  .spanTS {
+    height: 15px;
+  }
+  
+  .spanTS img {
+    width: 5vw;
+    margin: 0 8px;
+  }
+  
+  
+  .divAbout {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .containerStatsText {
+    margin: 30px 0;
+    width: 100%;
+  }
+  
+  .divText {
+    width: 100%;
+    min-height: 4vw;
+    padding: 10px 25px;
+  }
+  
+  .spanAbout {
+    padding: 5px 25px 5px 15px;
+    font-size: .9rem;
+
+  }
+  
+  .spanText {
+    font-size: 2.5vw;
+    line-height: 3.5vw;
+    padding-bottom: 5px;
+  }
+  
+  .divButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+
+  .buttonNext {
+    right: -5vw;
+  }
+  
+  .buttonPrev {
+    left: -5vw;
+   
+  }
+  
+  .arrow {
+    width: 6vw;
   }
 }
 
